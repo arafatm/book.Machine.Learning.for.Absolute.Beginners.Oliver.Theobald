@@ -30,29 +30,30 @@ Machine learning, data mining, artificial intelligence, and computer programming
 ![](202408263927.png)
 - Figure 4: Visual representation of the relationship between data-related fields
 
-| Technique   | Input known | Output known | Methodology                                   |     |
-| ----------- | ----------- | ------------ | --------------------------------------------- | --- |
-| Data Mining | ✅           |              | Analyzes inputs to generate an unknown output |     |
-|             |             |              | Analyzes com                                  |     |
-
-
-
-_Data mining_ focuses on analyzing input variables to predict a new output, machine learning extends to analyzing both input and output variables.
-
-![](202408264337.png)
-- Table 1: Comparison of techniques based on the utility of input and output data/variables
+| Technique              | Input known | Output known | Methodology                                                                                        |     |
+| ---------------------- | ----------- | ------------ | -------------------------------------------------------------------------------------------------- | --- |
+| Data Mining            | ✅           |              | Analyzes inputs to generate an unknown output                                                      |     |
+| Supervised Learning    | ✅           | ✅            | Analyzes combination of known inputs and outputs to predict future outputs based on new input data |     |
+| Unsupervised Learning  | ✅           |              | Analyzes inputs to generate an output. Algorithms may differ from data mining                      |     |
+| Reinforcement Learning |             | ✅            | Randomly trials a high number of input variables to produce a desired output                       |     |
 
 ## 3 MACHINE LEARNING CATEGORIES
 
-Supervised Learning
+### Supervised Learning
 
-Supervised learning imitates our own ability to extract patterns from known examples and use that extracted insight to engineer a repeatable outcome.
+> _#Supervised_learning_ imitates our own ability to extract patterns from known examples and use that extracted insight to engineer a repeatable outcome.
+- Input data is referred to as the _#independent_variable_ (uppercase `X`),
+- Output data is called the _#dependent_variable_ (lowercase `y`).
 
-This process of understanding a known input-output combination
+|       | Input | Input   | Input | Output |
+| ----- | ----- | ------- | ----- | ------ |
+|       | Brand | Mileage | Year  | Price  |
+| Car 1 | Lexus | 51715   | 2012  | 15985  |
+| Car 1 | Lexus | 51715   | 2012  | 15985  |
+| Car 1 | Lexus | 51715   | 2012  | 15985  |
+| Car 1 | Lexus | 51715   | 2012  | 15985  |
+| Car 1 | Lexus | 51715   | 2012  | 15985  |
 
-Input data is referred to as the independent variable (uppercase “X”),
-
-the output data is called the dependent variable (lowercase “y”).
 
 Table 2: Extract of a used car dataset
 
