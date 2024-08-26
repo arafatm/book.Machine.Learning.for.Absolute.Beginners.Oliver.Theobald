@@ -19,7 +19,7 @@ Machine learning, on the other hand, emphasizes _exposure to data as a way to re
 
 ### Training & Test Data
 
-> #training_data the initial reserve of data used to develop the model.
+> _#training_data_ the initial reserve of data used to develop the model.
 
 After you have developed a model based on patterns extracted from the training data and you are satisfied with the accuracy of its predictions, you can test the model on the remaining data, known as the _test data_.
 
@@ -28,12 +28,19 @@ After you have developed a model based on patterns extracted from the training d
 Machine learning, data mining, artificial intelligence, and computer programming all fall under the umbrella of computer science,
 
 ![](202408263927.png)
-![](Pasted%20image%2020240826163458.png)
-Figure 4: Visual representation of the relationship between data-related fields
+- Figure 4: Visual representation of the relationship between data-related fields
 
-data mining focuses on analyzing input variables to predict a new output, machine learning extends to analyzing both input and output variables.
+| Technique   | Input known | Output known | Methodology                                   |     |
+| ----------- | ----------- | ------------ | --------------------------------------------- | --- |
+| Data Mining | ✅           |              | Analyzes inputs to generate an unknown output |     |
+|             |             |              | Analyzes com                                  |     |
 
-Table 1: Comparison of techniques based on the utility of input and output data/variables
+
+
+_Data mining_ focuses on analyzing input variables to predict a new output, machine learning extends to analyzing both input and output variables.
+
+![](202408264337.png)
+- Table 1: Comparison of techniques based on the utility of input and output data/variables
 
 ## 3 MACHINE LEARNING CATEGORIES
 
