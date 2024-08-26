@@ -45,19 +45,17 @@ Machine learning, data mining, artificial intelligence, and computer programming
 - Input data is referred to as the _#independent_variable_ (uppercase `X`),
 - Output data is called the _#dependent_variable_ (lowercase `y`).
 
-|       | Input | Input   | Input | Output |
-| ----- | ----- | ------- | ----- | ------ |
-|       | Brand | Mileage | Year  | Price  |
-| Car 1 | Lexus | 51715   | 2012  | 15985  |
-| Car 1 | Lexus | 51715   | 2012  | 15985  |
-| Car 1 | Lexus | 51715   | 2012  | 15985  |
-| Car 1 | Lexus | 51715   | 2012  | 15985  |
-| Car 1 | Lexus | 51715   | 2012  | 15985  |
+| ------ | Input-- | Input--- | Input- | Output- |
+| ------ | ------- | -------- | ------ | ------- |
+|        | Brand   | Mileage  | Year   | Price   |
+| Car 1  | Lexus   | 51715    | 2012   | 15985   |
+| Car 2  | Lexus   | 7980     | 2013   | 19600   |
+| Car 3  | Lexus   | 82497    | 2012   | 14095   |
+| Car 4  | Lexus   | 85199    | 2011   | 12490   |
+| Car 5  | Audi    | 62948    | 2008   | 13985   |
+- Table 2: Extract of a used car dataset
 
-
-Table 2: Extract of a used car dataset
-
-With access to the selling price of other similar cars, the supervised learning model can work backward to determine the relationship between a car’s value (output) and its characteristics (input). The input features of your own car can then be inputted into the model to generate a price prediction.
+With access to the selling price of other similar cars, the supervised learning model can _work backward_ to determine the relationship between a car’s value (output) and its characteristics (input). The input features of your own car can then be inputted into the model to generate a price prediction.
 
 Figure 5: Inputs (X) are fed to the model to generate a new prediction (y)
 
