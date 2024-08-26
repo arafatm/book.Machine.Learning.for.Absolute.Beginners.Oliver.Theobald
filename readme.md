@@ -1,5 +1,5 @@
 ---
-author:Oliver Theobald
+author: Oliver Theobald
 title: Machine Learning for Absolute Beginners
 ---
 
@@ -19,11 +19,11 @@ Machine learning, on the other hand, emphasizes _exposure to data as a way to re
 
 ### Training & Test Data
 
-> #training.data the initial reserve of data used to develop the model.
+> #training_data the initial reserve of data used to develop the model.
 
-After you have developed a model based on patterns extracted from the training data and you are satisfied with the accuracy of its predictions, you can test the model on the remaining data, known as the test data.
+After you have developed a model based on patterns extracted from the training data and you are satisfied with the accuracy of its predictions, you can test the model on the remaining data, known as the _test data_.
 
-The Anatomy of Machine Learning
+## The Anatomy of Machine Learning
 
 Machine learning, data mining, artificial intelligence, and computer programming all fall under the umbrella of computer science,
 
