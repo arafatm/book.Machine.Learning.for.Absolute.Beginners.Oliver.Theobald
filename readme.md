@@ -27,6 +27,7 @@ After you have developed a model based on patterns extracted from the training d
 
 Machine learning, data mining, artificial intelligence, and computer programming all fall under the umbrella of computer science,
 
+![](Pasted%20image%2020240826163458.png)
 Figure 4: Visual representation of the relationship between data-related fields
 
 data mining focuses on analyzing input variables to predict a new output, machine learning extends to analyzing both input and output variables.
