@@ -1,5 +1,7 @@
-Machine Learning for Absolute Beginners: A Plain English Introduction (Third Edition) (Machine Learning with Python for Beginners Book Series 1)
-Oliver Theobald
+---
+author:Oliver Theobald
+title: Machine Learning for Absolute Beginners
+---
 
 Machine Learning For Absolute Beginners: A Plain English Introduction
 LOCATION: 3
