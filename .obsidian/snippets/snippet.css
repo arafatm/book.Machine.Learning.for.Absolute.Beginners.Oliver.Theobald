@@ -1,0 +1,25 @@
+/*.cm-s-obsidian .cm-line.HyperMD-header { padding-top: 0; }
+.cm-s-obsidian .cm-line.HyperMD-header-2 { border: solid var(--h2-color) 0.1rem; text-transform: uppercase;}
+.cm-s-obsidian .cm-line.HyperMD-header-3 { text-decoration: underline; }
+.cm-s-obsidian .cm-line.HyperMD-header-6 { color: var(--body-color); }
+.cm-s-obsidian .cm-line.HyperMD-header-6 { font-weight: 100; }
+.cm-s-obsidian .cm-line.HyperMD-header-6::before { content: '- '; }
+.cm-sizer { max-width: 80rem; }
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer { max-width: 80rem; }
+.markdown-rendered td, .markdown-rendered th { padding: 0.1rem; min-width: 1rem; }
+.markdown-rendered ul.has-list-bullet { margin: 0 1rem !important; }
+.markdown-source-view.mod-cm6 .cm-table-widget th, .markdown-source-view.mod-cm6 .cm-table-widget td { min-width: 1rem; }
+h5, .markdown-rendered h5 {  margin: 0 !important; }
+h6, .markdown-rendered h6 {  margin: 0 !important; }
+
+*/
+:root {
+  --table-column-min-width;
+}
+.table-view-table { width: 0;}
+.markdown-source-view.mod-cm6 .cm-table-widget th, .markdown-source-view.mod-cm6 .cm-table-widget td { 
+min-width: 0.1rem; padding: 0; margin: 0; }
+.markdown-source-view.mod-cm6 .cm-table-widget .table-cell-wrapper { margin: 0; padding: 0; }
+th, td { margin: 0; padding: 0; min-width: 10rem; }
+img { max-height: 20em;}
+span.math {color: wheat}
