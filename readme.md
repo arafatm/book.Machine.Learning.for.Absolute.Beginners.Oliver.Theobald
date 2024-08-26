@@ -3,8 +3,7 @@ author:Oliver Theobald
 title: Machine Learning for Absolute Beginners
 ---
 
-Machine Learning For Absolute Beginners: A Plain English Introduction
-LOCATION: 3
+# Machine Learning For Absolute Beginners: A Plain English Introduction
 
 2       WHAT IS MACHINE LEARNING?
 LOCATION: 112
