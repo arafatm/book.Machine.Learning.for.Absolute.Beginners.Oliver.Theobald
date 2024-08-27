@@ -27,7 +27,7 @@ After you have developed a model based on patterns extracted from the training d
 
 Machine learning, data mining, artificial intelligence, and computer programming all fall under the umbrella of computer science,
 
-![](img/240826163927.png)
+![](assets/img/240826163927.png)
 - Figure 4: Visual representation of the relationship between data-related fields
 
 | Technique              | Input known | Output known | Methodology                                                                                        |     |
@@ -57,12 +57,12 @@ Machine learning, data mining, artificial intelligence, and computer programming
 
 With access to the selling price of other similar cars, the supervised learning model can _work backward_ to determine the relationship between a car’s value (output) and its characteristics (input). The input features of your own car can then be inputted into the model to generate a price prediction.
 
-![](img/240826165546.png)
+![](assets/img/240826165546.png)
 - Figure 5: Inputs (X) are fed to the model to generate a new prediction (y)
 
 When building a supervised learning model, each item (i.e. car, product, customer) must have labeled input and output values—known in data science as a _#labeled_dataset_
 
-![](img/240826165628.png)
+![](assets/img/240826165628.png)
 - Figure 6: Labeled data vs. unlabeled data
 
 _#Common_algorithms_ used in supervised learning include:
@@ -126,7 +126,7 @@ Contained in each column is a feature. A _#feature is also known as a variable, 
 - Rows are sometimes referred to as a _case or value_
 - Each column is known also as a vector.
 
-![](img/240826164511.png)
+![](assets/img/240826164511.png)
 - Figure 8: The y value is often but not always expressed in the far-right vector
 
 _Scatterplots_, including 2-D, 3-D, and 4-D plots, are also packed into the
@@ -139,13 +139,13 @@ libraries, including NumPy, Pandas, and Scikit-learn, server. In addition, you
 may need specialized libraries for data visualization such as Seaborn and
 Matplotlib, or a standalone software program like Tableau,
 
-### Compartment 3: Algorithms
+#### Compartment 3: Algorithms
 
 You can find hundreds of interesting datasets in CSV format from [kaggle.com](http://kaggle.com)
 
 Beginners typically start out using _simple supervised learning algorithms_ such as linear regression, logistic regression, decision trees, and k-nearest neighbors. Beginners are also likely to apply unsupervised learning in the form of k-means clustering and descending dimension algorithms.
 
-### Visualization
+#### Visualization
 
 The visual story conveyed through graphs, scatterplots, heatmaps, box plots, and the representation of numbers as shapes make for quick and easy storytelling.
 
@@ -183,7 +183,7 @@ Datasets need upfront cleaning and human manipulation before they’re ready for
 
 It’s essential to identify which variables are most relevant to your hypothesis or objective.
 
-![](img/240826164931.png)
+![](assets/img/240826164931.png)
 Table 4: Endangered languages, database:
 https://www.kaggle.com/the-guardian/extinct-languages
 
@@ -192,12 +192,12 @@ Let’s say our goal is to identify variables that contribute to a language beco
 - Secondly, the dataset contains duplicated information in the form of separate vectors for “Countries” and “Country Code.”
 - Another method to reduce the number of features is to roll multiple features into one,
 
-![](img/240826195732.png)
+![](assets/img/240826195732.png)
 - Table 5: Sample product inventory
 
 For instance, we can remove individual product names and replace the eight product items with fewer categories or subtypes.
 
-![](img/240826195902.png)
+![](assets/img/240826195902.png)
 Table 6: Synthesized product inventory
 
 The downside to this transformation is that we have less information about the relationships between specific products.
@@ -206,7 +206,7 @@ The downside to this transformation is that we have less information about the r
 
 In addition to feature selection, you may need to _reduce the number of rows_
 
-![](img/240826200053.png)
+![](assets/img/240826200053.png)
 - Table 7: Example of row merge
 
 _Non-numeric and categorical row values can be problematic to merge_ while preserving the true value of the original data. Also, row compression is usually _less attainable than feature compression_ and especially for datasets with a high number of features.
@@ -219,10 +219,10 @@ Most algorithms are _not compatible with non-numeric data_.
 
 > _#one-hot_encoding_: transforms values into binary form
 
-![](img/240826200411.png)
+![](assets/img/240826200411.png)
 - Table 8: Endangered languages
 
-![](img/240826200429.png)
+![](assets/img/240826200429.png)
 - Table 9: Example of one-hot encoding
 
 Using one-hot encoding, the dataset has expanded to five columns, and we have created three new features from the original feature
@@ -251,31 +251,27 @@ Normalization, however, _usually isn’t recommended for rescaling features with
 
 > _#standardization_: This technique converts unit variance to a _standard normal distribution_ with a mean of zero and a standard deviation (σ) of one.
 
-![](img/240826200714.png)
+![](assets/img/240826200714.png)
 - Figure 11: Examples of rescaled data using normalization and standardization
 
-Standardization is generally more effective than normalization when the variability of the feature reflects a bell-curve shape of normal distribution and is often used in unsupervised learning.
+Standardization is _generally more effective than normalization when the variability of the feature reflects a bell-curve shape of normal distribution_ and is _often used in unsupervised learning_.
 
-Standardization is generally recommended when preparing data for support vector machines (SVM), principal component analysis (PCA), and k-nearest neighbors (k-NN).
+Standardization is _generally recommended when preparing data for support vector machines (SVM), principal component analysis (PCA), and k-nearest neighbors (k-NN)_.
 
-Missing Data
+### Missing Data
 
-Missing values in your dataset can be equally frustrating and interfere with your analysis and the model’s predictions.
+Missing values in your dataset can be equally frustrating and interfere with your analysis and the model’s predictions. There are, however, strategies to minimize the negative impact of missing data.
 
-There are, however, strategies to minimize the negative impact of missing data.
+One approach is to _approximate missing values_ using the mode value. This works best with categorical and binary variable types, such as one to five-star rating systems and positive/negative drug tests respectively.
 
-One approach is to approximate missing values using the mode value.
-
-This works best with categorical and binary variable types, such as one to five-star rating systems and positive/negative drug tests respectively.
-
+![](assets/img/240826201037.png)
 Figure 12: A visual example of the mode and median respectively
 
-The second approach is to approximate missing values using the median value,
+The second approach is to _approximate missing values using the median value_. This works best with continuous variables, which have an infinite number of possible values, such as house prices.
 
-This works best with continuous variables, which have an infinite number of possible values, such as house prices.
+As a last resort, _rows with missing values can be removed altogether_. The obvious downside to this approach is having less data to analyze and potentially less comprehensive insight.
 
-As a last resort, rows with missing values can be removed altogether. The obvious downside to this approach is having less data to analyze and potentially less comprehensive insight.
-
+# aaa
 ## 6 SETTING UP YOUR DATA
 
 After cleaning your dataset, the next job is to split the data into two segments for training and testing, also known as split validation.
