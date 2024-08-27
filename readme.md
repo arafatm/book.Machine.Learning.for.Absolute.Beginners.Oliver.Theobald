@@ -27,7 +27,7 @@ After you have developed a model based on patterns extracted from the training d
 
 Machine learning, data mining, artificial intelligence, and computer programming all fall under the umbrella of computer science,
 
-![](202408263927.png)
+![](img/202408263927.png)
 - Figure 4: Visual representation of the relationship between data-related fields
 
 | Technique              | Input known | Output known | Methodology                                                                                        |     |
@@ -62,7 +62,7 @@ Figure 5: Inputs (X) are fed to the model to generate a new prediction (y)
 
 When building a supervised learning model, each item (i.e. car, product, customer) must have labeled input and output values—known in data science as a _#labeled_dataset_
 
-![](202408265628.png)
+![](240826165628.png)
 Figure 6: Labeled data vs. unlabeled data
 
 _#Common_algorithms_ used in supervised learning include:
@@ -124,7 +124,7 @@ Contained in each column is a feature. A _#feature is also known as a variable, 
 - Rows are sometimes referred to as a _case or value_
 - Each column is known also as a vector.
 
-![](202408264511.png)
+![](240826164511.png)
 Figure 8: The y value is often but not always expressed in the far-right vector
 
 _Scatterplots_, including 2-D, 3-D, and 4-D plots, are also packed into the
@@ -173,13 +173,15 @@ Developers, therefore, will sometimes utilize _Keras to validate their decision 
 
 ## 5 DATA SCRUBBING
 
-datasets need upfront cleaning and human manipulation before they’re ready for consumption.
+Datasets need upfront cleaning and human manipulation before they’re ready for consumption.
 
-Feature Selection
+## Feature Selection
 
-it’s essential to identify which variables are most relevant to your hypothesis or objective.
+It’s essential to identify which variables are most relevant to your hypothesis or objective.
 
-Table 4: Endangered languages, database: https://www.kaggle.com/the-guardian/extinct-languages
+![](240826164931.png)
+Table 4: Endangered languages, database:
+https://www.kaggle.com/the-guardian/extinct-languages
 
 Let’s say our goal is to identify variables that contribute to a language becoming endangered. Based on the purpose of our analysis, it’s unlikely that a language’s “Name in Spanish” will lead to any relevant insight. We can therefore delete this vector (column) from the dataset.
 
