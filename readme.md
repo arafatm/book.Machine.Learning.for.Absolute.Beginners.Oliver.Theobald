@@ -57,37 +57,37 @@ Machine learning, data mining, artificial intelligence, and computer programming
 
 With access to the selling price of other similar cars, the supervised learning model can _work backward_ to determine the relationship between a car’s value (output) and its characteristics (input). The input features of your own car can then be inputted into the model to generate a price prediction.
 
+![](202408265546.png)
 Figure 5: Inputs (X) are fed to the model to generate a new prediction (y)
 
-When building a supervised learning model, each item (i.e. car, product, customer) must have labeled input and output values—known in data science as a “labeled dataset.”
+When building a supervised learning model, each item (i.e. car, product, customer) must have labeled input and output values—known in data science as a _#labeled_dataset_
 
+![](202408265628.png)
 Figure 6: Labeled data vs. unlabeled data
 
-common algorithms used in supervised learning include regression analysis (i.e. linear regression, logistic regression, non-linear regression), decision trees, k-nearest neighbors, neural networks, and support vector machines,
+_#Common_algorithms_ used in supervised learning include:
+- regression analysis (i.e. linear regression, logistic regression, non-linear regression), 
+- decision trees, 
+- k-nearest neighbors, 
+- neural networks, 
+- support vector machines,
 
-Unsupervised Learning
+### Unsupervised Learning
 
-In the case of unsupervised learning, the output variables are unlabeled, and combinations of input and output variables aren’t known.
+> _#Unsupervised_learning_: the output _variables are unlabeled_, and combinations of input and output _variables aren’t known_.
 
-Unsupervised learning instead focuses on analyzing relationships between input variables and uncovering hidden patterns that can be extracted to create new labels regarding possible outputs.
-
-The advantage of unsupervised learning is that it enables you to discover patterns in the data that you were unaware of—such
+Unsupervised learning instead focuses on analyzing relationships between input variables and _uncovering hidden patterns_ that can be extracted to create new labels regarding possible outputs.
 
 Unsupervised learning is especially compelling in the domain of fraud detection—where the most dangerous attacks are those yet to be classified.
 
 One interesting example is DataVisor; a company that has built its business model on unsupervised learning. Founded in 2013 in California, DataVisor protects customers from fraudulent online activities, including spam, fake reviews, fake app installs, and fraudulent transactions.
+- traditional solutions analyze chains of activity for a specific type of attack and then create rules to predict and detect repeat attacks. In this case, the dependent variable (output) is the event of an attack, and the independent variables (input) are the common predictor variables of an attack.
+- a model that monitors combinations of independent variables, such as a large purchasing order from the other side of the globe or a landslide number of book reviews that reuse existing user content generally leads to a better prediction.
+- In supervised learning, the model deconstructs and classifies what these common variables are and designs a detection system to identify and prevent repeat offenses.
+- Sophisticated cybercriminals, though, learn to evade these simple classification-based rule engines by modifying their tactics.
+- leverage unsupervised learning techniques to address these limitations.
 
-traditional solutions analyze chains of activity for a specific type of attack and then create rules to predict and detect repeat attacks. In this case, the dependent variable (output) is the event of an attack, and the independent variables (input) are the common predictor variables of an attack.
-
-a model that monitors combinations of independent variables, such as a large purchasing order from the other side of the globe or a landslide number of book reviews that reuse existing user content generally leads to a better prediction.
-
-In supervised learning, the model deconstructs and classifies what these common variables are and designs a detection system to identify and prevent repeat offenses.
-
-Sophisticated cybercriminals, though, learn to evade these simple classification-based rule engines by modifying their tactics.
-
-leverage unsupervised learning techniques to address these limitations.
-
-The drawback, though, of using unsupervised learning is that because the dataset is unlabeled, there aren’t any known output observations to check and validate the model, and predictions are therefore more subjective than those coming from supervised learning.
+The _drawback_, though, of using unsupervised learning is that because the dataset is unlabeled, there aren’t any known output observations to check and validate the model, and predictions are therefore more subjective than those coming from supervised learning.
 
 Semi-supervised Learning
 
