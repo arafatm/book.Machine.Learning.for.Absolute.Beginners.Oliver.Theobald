@@ -184,7 +184,7 @@ Datasets need upfront cleaning and human manipulation before they’re ready for
 It’s essential to identify which variables are most relevant to your hypothesis or objective.
 
 ![](assets/img/240826164931.png)
-Table 4: Endangered languages, database:
+- Table 4: Endangered languages, database:
 https://www.kaggle.com/the-guardian/extinct-languages
 
 Let’s say our goal is to identify variables that contribute to a language becoming endangered. 
@@ -198,7 +198,7 @@ Let’s say our goal is to identify variables that contribute to a language beco
 For instance, we can remove individual product names and replace the eight product items with fewer categories or subtypes.
 
 ![](assets/img/240826195902.png)
-Table 6: Synthesized product inventory
+- Table 6: Synthesized product inventory
 
 The downside to this transformation is that we have less information about the relationships between specific products.
 
@@ -265,7 +265,7 @@ Missing values in your dataset can be equally frustrating and interfere with you
 One approach is to _approximate missing values_ using the mode value. This works best with categorical and binary variable types, such as one to five-star rating systems and positive/negative drug tests respectively.
 
 ![](assets/img/240826201037.png)
-Figure 12: A visual example of the mode and median respectively
+- Figure 12: A visual example of the mode and median respectively
 
 The second approach is to _approximate missing values using the median value_. This works best with continuous variables, which have an infinite number of possible values, such as house prices.
 
