@@ -112,21 +112,18 @@ A specific algorithmic example of reinforcement learning
 
 A more comprehensive explanation of reinforcement learning and Q-learning using the [Pac-Man case study](https://inst.eecs.berkeley.edu/~cs188/sp12/projects/reinforcement/reinforcement.html)
 
-# aaa
-
 ## 4 THE MACHINE LEARNING TOOLBOX
-
 
 ### Compartment 1: Data
 
-As a beginner, it’s best to start with (analyzing) structured data. This means that the data is defined, organized, and labeled in a table, as shown in Table 3.
+As a beginner, it’s best to _start with (analyzing) structured data_. This means that the data is defined, organized, and labeled in a table, as shown in Table 3.
 
 Images, videos, email messages, and audio recordings are examples of unstructured data as they don’t fit into the organized structure of rows and columns.
 
-Contained in each column is a feature. A feature is also known as a variable, a dimension or an attribute—
+Contained in each column is a feature. A _#feature is also known as a variable, a dimension or an attribute_
+- Rows are sometimes referred to as a _case or value_
 
-Rows are sometimes referred to as a case or value,
-
+![](202408264359.png)
 Figure 7: Example of a tabular dataset
 
 Each column is known also as a vector.
