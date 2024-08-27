@@ -122,31 +122,26 @@ Images, videos, email messages, and audio recordings are examples of unstructure
 
 Contained in each column is a feature. A _#feature is also known as a variable, a dimension or an attribute_
 - Rows are sometimes referred to as a _case or value_
+- Each column is known also as a vector.
 
-![](202408264359.png)
-Figure 7: Example of a tabular dataset
-
-Each column is known also as a vector.
-
+![](202408264511.png)
 Figure 8: The y value is often but not always expressed in the far-right vector
 
-Scatterplots, including 2-D, 3-D, and 4-D plots, are also packed into the first compartment of the toolbox with the data.
+_Scatterplots_, including 2-D, 3-D, and 4-D plots, are also packed into the
+first compartment of the toolbox with the data.
 
 ### Compartment 2: Infrastructure
 
-which consists of platforms and tools for processing data.
-
-Jupyter Notebook)
-
-of machine learning libraries, including NumPy, Pandas, and Scikit-learn,
-
-server. In addition, you may need specialized libraries for data visualization such as Seaborn and Matplotlib, or a standalone software program like Tableau,
+Platforms and tools for processing data: Jupyter Notebook, machine learning
+libraries, including NumPy, Pandas, and Scikit-learn, server. In addition, you
+may need specialized libraries for data visualization such as Seaborn and
+Matplotlib, or a standalone software program like Tableau,
 
 ### Compartment 3: Algorithms
 
-You can find hundreds of interesting datasets in CSV format from kaggle.com.
+You can find hundreds of interesting datasets in CSV format from [kaggle.com](http://kaggle.com)
 
-Beginners typically start out using simple supervised learning algorithms such as linear regression, logistic regression, decision trees, and k-nearest neighbors. Beginners are also likely to apply unsupervised learning in the form of k-means clustering and descending dimension algorithms.
+Beginners typically start out using _simple supervised learning algorithms_ such as linear regression, logistic regression, decision trees, and k-nearest neighbors. Beginners are also likely to apply unsupervised learning in the form of k-means clustering and descending dimension algorithms.
 
 ### Visualization
 
@@ -154,27 +149,27 @@ The visual story conveyed through graphs, scatterplots, heatmaps, box plots, and
 
 ### The Advanced Toolbox
 
-Beginners work with small datasets that are easy to handle and downloaded directly to one’s desktop as a simple CSV file.
-
-Advanced users, though, will be eager to tackle massive datasets, well in the vicinity of big data.
+Beginners work with small datasets that are easy to handle and downloaded directly to one’s desktop as a simple CSV file. Advanced users, though, will be eager to tackle massive datasets, well in the vicinity of big data.
 
 #### Compartment 1: Big Data
 
+Big data is also _less likely to fit into standard rows and columns_ and may contain numerous data types, such as structured data and a range of unstructured data, i.e. images, videos, email messages, and audio files.
+
 #### Compartment 2: Infrastructure
 
-in 2009, Andrew Ng and a team at Stanford University made a discovery to link inexpensive GPU clusters to run neural networks consisting of hundreds of millions of connected nodes.
+In 2009, Andrew Ng and a team at Stanford University made a discovery to _link inexpensive GPU clusters to run neural networks_ consisting of hundreds of millions of connected nodes.
 
-TensorFlow is only compatible with the Nvidia GPU card,
+TensorFlow is only compatible with the Nvidia GPU card.
 
 #### Compartment 3: Advanced Algorithms
 
-While Scikit-learn offers a range of popular shallow algorithms, TensorFlow is the machine learning library of choice for deep learning/neural networks.
+While _Scikit-learn_ offers a range of popular shallow algorithms, _TensorFlow_ is the machine learning library of choice for deep learning/neural networks.
 
-Written in Python, Keras is an open-source deep learning library that runs on top of TensorFlow, Theano, and other frameworks, which allows users to perform fast experimentation in fewer lines of code.
+Written in Python, _Keras_ is an open-source deep learning library that _runs on top of TensorFlow, Theano, and other frameworks_, which allows users to perform fast experimentation in fewer lines of code.
 
 It is, however, less flexible in comparison to TensorFlow and other libraries.
 
-Developers, therefore, will sometimes utilize Keras to validate their decision model before switching to TensorFlow to build a more customized model.
+Developers, therefore, will sometimes utilize _Keras to validate their decision model before switching to TensorFlow to build a more customized model_.
 
 ## 5 DATA SCRUBBING
 
