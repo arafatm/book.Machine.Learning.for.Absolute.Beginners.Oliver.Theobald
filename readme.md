@@ -87,39 +87,37 @@ One interesting example is DataVisor; a company that has built its business mode
 - Sophisticated cybercriminals, though, learn to evade these simple classification-based rule engines by modifying their tactics.
 - leverage unsupervised learning techniques to address these limitations.
 
-The _drawback_, though, of using unsupervised learning is that because the dataset is unlabeled, there aren’t any known output observations to check and validate the model, and predictions are therefore more subjective than those coming from supervised learning.
+The _drawback_, though, of using unsupervised learning is that because the dataset is unlabeled, there _aren’t any known output observations to check_ and validate the model, and _predictions are therefore more subjective_ than those coming from supervised learning.
 
-Semi-supervised Learning
+### Semi-supervised Learning
 
-used for datasets that contain a mix of labeled and unlabeled cases.
+Used for datasets that contain a mix of labeled and unlabeled cases.
 
 One technique is to build the initial model using the labeled cases (supervised learning) and then use the same model to label the remaining cases (that are unlabeled) in the dataset.
 
-Reinforcement Learning
+### Reinforcement Learning
 
-the third and most advanced category of machine learning.
+The goal of reinforcement learning is to achieve a specific goal (output) by _randomly trialing a vast number of possible input combinations and grading their performance_.
 
-The goal of reinforcement learning is to achieve a specific goal (output) by randomly trialing a vast number of possible input combinations and grading their performance.
-
-Q-learning
+### Q-learning
 
 A specific algorithmic example of reinforcement learning
+- you start with a set environment of states, represented as “S.”
+- In the game Pac-Man, states could be the challenges, obstacles, or pathways
+- The set of possible actions to respond to these states is referred to as “A.” In Pac-Man, actions are limited to left, right, up, and down movements, as well as multiple combinations thereof.
+- The third important symbol is “Q,” which is the model’s starting value and has an initial value of “0.”
+- As Pac-Man explores the space inside the game, two main things happen: 
+  1. Q drops as negative things occur after a given state/action. 
+  2. Q increases as positive things occur after a given state/action.
 
-you start with a set environment of states, represented as “S.”
+A more comprehensive explanation of reinforcement learning and Q-learning using the [Pac-Man case study](https://inst.eecs.berkeley.edu/~cs188/sp12/projects/reinforcement/reinforcement.html)
 
-In the game Pac-Man, states could be the challenges, obstacles, or pathways
-
-The set of possible actions to respond to these states is referred to as “A.” In Pac-Man, actions are limited to left, right, up, and down movements, as well as multiple combinations thereof.
-
-The third important symbol is “Q,” which is the model’s starting value and has an initial value of “0.”
-
-As Pac-Man explores the space inside the game, two main things happen: 1) Q drops as negative things occur after a given state/action. 2) Q increases as positive things occur after a given state/action.
-
-more comprehensive explanation of reinforcement learning and Q-learning using the Pac-Man case study. https://inst.eecs.berkeley.edu/~cs188/sp12/projects/reinforcement/reinforcement.html
+# aaa
 
 ## 4 THE MACHINE LEARNING TOOLBOX
 
-Compartment 1: Data
+
+### Compartment 1: Data
 
 As a beginner, it’s best to start with (analyzing) structured data. This means that the data is defined, organized, and labeled in a table, as shown in Table 3.
 
@@ -137,7 +135,7 @@ Figure 8: The y value is often but not always expressed in the far-right vector
 
 Scatterplots, including 2-D, 3-D, and 4-D plots, are also packed into the first compartment of the toolbox with the data.
 
-Compartment 2: Infrastructure
+### Compartment 2: Infrastructure
 
 which consists of platforms and tools for processing data.
 
@@ -147,31 +145,31 @@ of machine learning libraries, including NumPy, Pandas, and Scikit-learn,
 
 server. In addition, you may need specialized libraries for data visualization such as Seaborn and Matplotlib, or a standalone software program like Tableau,
 
-Compartment 3: Algorithms
+### Compartment 3: Algorithms
 
 You can find hundreds of interesting datasets in CSV format from kaggle.com.
 
 Beginners typically start out using simple supervised learning algorithms such as linear regression, logistic regression, decision trees, and k-nearest neighbors. Beginners are also likely to apply unsupervised learning in the form of k-means clustering and descending dimension algorithms.
 
-Visualization
+### Visualization
 
 The visual story conveyed through graphs, scatterplots, heatmaps, box plots, and the representation of numbers as shapes make for quick and easy storytelling.
 
-The Advanced Toolbox
+### The Advanced Toolbox
 
 Beginners work with small datasets that are easy to handle and downloaded directly to one’s desktop as a simple CSV file.
 
 Advanced users, though, will be eager to tackle massive datasets, well in the vicinity of big data.
 
-Compartment 1: Big Data
+#### Compartment 1: Big Data
 
-Compartment 2: Infrastructure
+#### Compartment 2: Infrastructure
 
 in 2009, Andrew Ng and a team at Stanford University made a discovery to link inexpensive GPU clusters to run neural networks consisting of hundreds of millions of connected nodes.
 
 TensorFlow is only compatible with the Nvidia GPU card,
 
-Compartment 3: Advanced Algorithms
+#### Compartment 3: Advanced Algorithms
 
 While Scikit-learn offers a range of popular shallow algorithms, TensorFlow is the machine learning library of choice for deep learning/neural networks.
 
