@@ -23,11 +23,11 @@ Machine learning, on the other hand, emphasizes _exposure to data as a way to re
 
 After you have developed a model based on patterns extracted from the training data and you are satisfied with the accuracy of its predictions, you can test the model on the remaining data, known as the _test data_.
 
-## The Anatomy of Machine Learning
+### The Anatomy of Machine Learning
 
 Machine learning, data mining, artificial intelligence, and computer programming all fall under the umbrella of computer science,
 
-![](240826163927.png)
+![](img/240826163927.png)
 - Figure 4: Visual representation of the relationship between data-related fields
 
 | Technique              | Input known | Output known | Methodology                                                                                        |     |
@@ -57,12 +57,12 @@ Machine learning, data mining, artificial intelligence, and computer programming
 
 With access to the selling price of other similar cars, the supervised learning model can _work backward_ to determine the relationship between a car’s value (output) and its characteristics (input). The input features of your own car can then be inputted into the model to generate a price prediction.
 
-![](240826165546.png)
+![](img/240826165546.png)
 - Figure 5: Inputs (X) are fed to the model to generate a new prediction (y)
 
 When building a supervised learning model, each item (i.e. car, product, customer) must have labeled input and output values—known in data science as a _#labeled_dataset_
 
-![](240826165628.png)
+![](img/240826165628.png)
 - Figure 6: Labeled data vs. unlabeled data
 
 _#Common_algorithms_ used in supervised learning include:
@@ -114,7 +114,9 @@ A more comprehensive explanation of reinforcement learning and Q-learning using 
 
 ## 4 THE MACHINE LEARNING TOOLBOX
 
-### Compartment 1: Data
+### Standard Toolbox
+
+#### Compartment 1: Data
 
 As a beginner, it’s best to _start with (analyzing) structured data_. This means that the data is defined, organized, and labeled in a table, as shown in Table 3.
 
@@ -124,13 +126,13 @@ Contained in each column is a feature. A _#feature is also known as a variable, 
 - Rows are sometimes referred to as a _case or value_
 - Each column is known also as a vector.
 
-![](240826164511.png)
+![](img/240826164511.png)
 - Figure 8: The y value is often but not always expressed in the far-right vector
 
 _Scatterplots_, including 2-D, 3-D, and 4-D plots, are also packed into the
 first compartment of the toolbox with the data.
 
-### Compartment 2: Infrastructure
+#### Compartment 2: Infrastructure
 
 Platforms and tools for processing data: Jupyter Notebook, machine learning
 libraries, including NumPy, Pandas, and Scikit-learn, server. In addition, you
@@ -181,7 +183,7 @@ Datasets need upfront cleaning and human manipulation before they’re ready for
 
 It’s essential to identify which variables are most relevant to your hypothesis or objective.
 
-![](240826164931.png)
+![](img/240826164931.png)
 Table 4: Endangered languages, database:
 https://www.kaggle.com/the-guardian/extinct-languages
 
@@ -190,12 +192,12 @@ Let’s say our goal is to identify variables that contribute to a language beco
 - Secondly, the dataset contains duplicated information in the form of separate vectors for “Countries” and “Country Code.”
 - Another method to reduce the number of features is to roll multiple features into one,
 
-![](240826195732.png)
+![](img/240826195732.png)
 - Table 5: Sample product inventory
 
 For instance, we can remove individual product names and replace the eight product items with fewer categories or subtypes.
 
-![](240826195902.png)
+![](img/240826195902.png)
 Table 6: Synthesized product inventory
 
 The downside to this transformation is that we have less information about the relationships between specific products.
@@ -204,8 +206,8 @@ The downside to this transformation is that we have less information about the r
 
 In addition to feature selection, you may need to _reduce the number of rows_
 
-![](240826200053.png)
-Table 7: Example of row merge
+![](img/240826200053.png)
+- Table 7: Example of row merge
 
 _Non-numeric and categorical row values can be problematic to merge_ while preserving the true value of the original data. Also, row compression is usually _less attainable than feature compression_ and especially for datasets with a high number of features.
 
@@ -217,39 +219,40 @@ Most algorithms are _not compatible with non-numeric data_.
 
 > _#one-hot_encoding_: transforms values into binary form
 
-Table 8: Endangered languages
+![](img/240826200411.png)
+- Table 8: Endangered languages
 
-Table 9: Example of one-hot encoding
+![](img/240826200429.png)
+- Table 9: Example of one-hot encoding
 
 Using one-hot encoding, the dataset has expanded to five columns, and we have created three new features from the original feature
 
-Binning
+### Binning
 
-(also called bucketing)
+(also called _#bucketing_)
 
-used for converting continuous numeric values into multiple binary features called bins or buckets according to their range of values.
+> _#binning_: used for converting continuous numeric values into multiple binary features called bins or buckets according to their range of values.
 
 Let’s take house price evaluation as an example. The exact measurements of a tennis court might not matter much when evaluating house property prices;
+- numeric measurements of the tennis court with a True/False feature or a categorical value such as “small,” “medium,” and “large.”
+- Another alternative would be to apply one-hot encoding with “0” for homes that do not have a tennis court
 
-numeric measurements of the tennis court with a True/False feature or a categorical value such as “small,” “medium,” and “large.”
+### Normalization
 
-Another alternative would be to apply one-hot encoding with “0” for homes that do not have a tennis court
-
-Normalization
-
-normalization and standardization help to improve model accuracy when used with the right algorithm.
+> _#normalization_ and standardization help to improve model accuracy when used with the right algorithm.
 
 The former (normalization) rescales the range of values for a given feature into a set range with a prescribed minimum and maximum, such as [0, 1] or [−1, 1].
 
-this technique helps to normalize the variance among the dataset’s features which may otherwise be exaggerated by another factor.
+This technique helps to _normalize the variance_ among the dataset’s features which may otherwise be exaggerated by another factor.
 
-Normalization, however, usually isn’t recommended for rescaling features with an extreme range as the normalized range is too narrow to emphasize extremely high or low feature values.
+Normalization, however, _usually isn’t recommended for rescaling features with an extreme range_ as the normalized range is too narrow to emphasize extremely high or low feature values.
 
-Standardization
+### Standardization
 
-This technique converts unit variance to a standard normal distribution with a mean of zero and a standard deviation (σ) of one.[15] This
+> _#standardization_: This technique converts unit variance to a _standard normal distribution_ with a mean of zero and a standard deviation (σ) of one.
 
-Figure 11: Examples of rescaled data using normalization and standardization
+![](img/240826200714.png)
+- Figure 11: Examples of rescaled data using normalization and standardization
 
 Standardization is generally more effective than normalization when the variability of the feature reflects a bell-curve shape of normal distribution and is often used in unsupervised learning.
 
