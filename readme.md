@@ -27,7 +27,7 @@ After you have developed a model based on patterns extracted from the training d
 
 Machine learning, data mining, artificial intelligence, and computer programming all fall under the umbrella of computer science,
 
-![](img/202408263927.png)
+![](240826163927.png)
 - Figure 4: Visual representation of the relationship between data-related fields
 
 | Technique              | Input known | Output known | Methodology                                                                                        |     |
@@ -57,13 +57,13 @@ Machine learning, data mining, artificial intelligence, and computer programming
 
 With access to the selling price of other similar cars, the supervised learning model can _work backward_ to determine the relationship between a car’s value (output) and its characteristics (input). The input features of your own car can then be inputted into the model to generate a price prediction.
 
-![](202408265546.png)
-Figure 5: Inputs (X) are fed to the model to generate a new prediction (y)
+![](240826165546.png)
+- Figure 5: Inputs (X) are fed to the model to generate a new prediction (y)
 
 When building a supervised learning model, each item (i.e. car, product, customer) must have labeled input and output values—known in data science as a _#labeled_dataset_
 
 ![](240826165628.png)
-Figure 6: Labeled data vs. unlabeled data
+- Figure 6: Labeled data vs. unlabeled data
 
 _#Common_algorithms_ used in supervised learning include:
 - regression analysis (i.e. linear regression, logistic regression, non-linear regression), 
@@ -125,7 +125,7 @@ Contained in each column is a feature. A _#feature is also known as a variable, 
 - Each column is known also as a vector.
 
 ![](240826164511.png)
-Figure 8: The y value is often but not always expressed in the far-right vector
+- Figure 8: The y value is often but not always expressed in the far-right vector
 
 _Scatterplots_, including 2-D, 3-D, and 4-D plots, are also packed into the
 first compartment of the toolbox with the data.
@@ -183,16 +183,18 @@ It’s essential to identify which variables are most relevant to your hypothes
 Table 4: Endangered languages, database:
 https://www.kaggle.com/the-guardian/extinct-languages
 
-Let’s say our goal is to identify variables that contribute to a language becoming endangered. Based on the purpose of our analysis, it’s unlikely that a language’s “Name in Spanish” will lead to any relevant insight. We can therefore delete this vector (column) from the dataset.
+Let’s say our goal is to identify variables that contribute to a language
+becoming endangered. 
+- Based on the purpose of our analysis, it’s unlikely that a language’s “Name in Spanish” will lead to any relevant insight. We can therefore delete this vector (column) from the dataset.
+- Secondly, the dataset contains duplicated information in the form of separate vectors for “Countries” and “Country Code.”
+- Another method to reduce the number of features is to roll multiple features into one,
 
-Secondly, the dataset contains duplicated information in the form of separate vectors for “Countries” and “Country Code.”
-
-Another method to reduce the number of features is to roll multiple features into one,
-
-Table 5: Sample product inventory
+![](240826195732.png)
+- Table 5: Sample product inventory
 
 For instance, we can remove individual product names and replace the eight product items with fewer categories or subtypes.
 
+![](240826195902.png)
 Table 6: Synthesized product inventory
 
 The downside to this transformation is that we have less information about the relationships between specific products.
