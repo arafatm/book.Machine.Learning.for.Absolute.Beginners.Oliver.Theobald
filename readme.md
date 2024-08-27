@@ -175,7 +175,9 @@ Developers, therefore, will sometimes utilize _Keras to validate their decision 
 
 Datasets need upfront cleaning and human manipulation before they’re ready for consumption.
 
-## Feature Selection
+### Feature Selection
+
+#feature_selection
 
 It’s essential to identify which variables are most relevant to your hypothesis or objective.
 
@@ -183,8 +185,7 @@ It’s essential to identify which variables are most relevant to your hypothes
 Table 4: Endangered languages, database:
 https://www.kaggle.com/the-guardian/extinct-languages
 
-Let’s say our goal is to identify variables that contribute to a language
-becoming endangered. 
+Let’s say our goal is to identify variables that contribute to a language becoming endangered. 
 - Based on the purpose of our analysis, it’s unlikely that a language’s “Name in Spanish” will lead to any relevant insight. We can therefore delete this vector (column) from the dataset.
 - Secondly, the dataset contains duplicated information in the form of separate vectors for “Countries” and “Country Code.”
 - Another method to reduce the number of features is to roll multiple features into one,
@@ -199,21 +200,22 @@ Table 6: Synthesized product inventory
 
 The downside to this transformation is that we have less information about the relationships between specific products.
 
-Row Compression
+### Row Compression
 
-In addition to feature selection, you may need to reduce the number of rows
+In addition to feature selection, you may need to _reduce the number of rows_
 
+![](240826200053.png)
 Table 7: Example of row merge
 
-non-numeric and categorical row values can be problematic to merge while preserving the true value of the original data. Also, row compression is usually less attainable than feature compression and especially for datasets with a high number of features.
+_Non-numeric and categorical row values can be problematic to merge_ while preserving the true value of the original data. Also, row compression is usually _less attainable than feature compression_ and especially for datasets with a high number of features.
 
-One-hot Encoding
+### One-hot Encoding
 
-you next want to look for text-based values that can be converted into numbers.
+You next want to look for _text-based values that can be converted into numbers_.
 
-with non-numeric data.
+Most algorithms are _not compatible with non-numeric data_.
 
-one-hot encoding, which transforms values into binary form,
+> _#one-hot_encoding_: transforms values into binary form
 
 Table 8: Endangered languages
 
