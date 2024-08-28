@@ -179,9 +179,7 @@ Datasets need upfront cleaning and human manipulation before they’re ready for
 
 ### Feature Selection
 
-#feature_selection
-
-It’s essential to identify which variables are most relevant to your hypothesis or objective.
+> _#feature_selection_ identify which variables are most relevant to your hypothesis or objective.
 
 ![](assets/img/240826164931.png)
 - Table 4: Endangered languages, database:
