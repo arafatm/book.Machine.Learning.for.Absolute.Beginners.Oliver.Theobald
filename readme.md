@@ -2,12 +2,14 @@
 author: Oliver Theobald
 title: Machine Learning for Absolute Beginners
 ---
-
 # Machine Learning For Absolute Beginners: A Plain English Introduction
 
 ## 2 WHAT IS MACHINE LEARNING?
 
-A key characteristic of machine learning is the concept of _self-learning_. This refers to the application of statistical modeling to detect patterns and improve performance based on data and empirical information; _all without direct programming commands_.
+A key characteristic of machine learning is the concept of _self-learning_. This
+refers to the application of statistical modeling to detect patterns and improve
+performance based on data and empirical information; _all without direct
+programming commands_.
 
 By decoding complex patterns in the input data, the model uses machine learning to find connections without human help.
 
@@ -27,7 +29,7 @@ After you have developed a model based on patterns extracted from the training d
 
 Machine learning, data mining, artificial intelligence, and computer programming all fall under the umbrella of computer science,
 
-![](assets/img/240826163927.png)
+![](240826163927.png)
 - Figure 4: Visual representation of the relationship between data-related fields
 
 | Technique              | Input known | Output known | Methodology                                                                                        |     |
@@ -57,12 +59,12 @@ Machine learning, data mining, artificial intelligence, and computer programming
 
 With access to the selling price of other similar cars, the supervised learning model can _work backward_ to determine the relationship between a car’s value (output) and its characteristics (input). The input features of your own car can then be inputted into the model to generate a price prediction.
 
-![](assets/img/240826165546.png)
+![](240826165546.png)
 - Figure 5: Inputs (X) are fed to the model to generate a new prediction (y)
 
 When building a supervised learning model, each item (i.e. car, product, customer) must have labeled input and output values—known in data science as a _#labeled_dataset_
 
-![](assets/img/240826165628.png)
+![](240826165628.png)
 - Figure 6: Labeled data vs. unlabeled data
 
 _#Common_algorithms_ used in supervised learning include:
@@ -126,7 +128,7 @@ Contained in each column is a feature. A _#feature is also known as a variable, 
 - Rows are sometimes referred to as a _case or value_
 - Each column is known also as a vector.
 
-![](assets/img/240826164511.png)
+![](240826164511.png)
 - Figure 8: The y value is often but not always expressed in the far-right vector
 
 _Scatterplots_, including 2-D, 3-D, and 4-D plots, are also packed into the
@@ -181,7 +183,7 @@ Datasets need upfront cleaning and human manipulation before they’re ready for
 
 > _#feature_selection_ identify which variables are most relevant to your hypothesis or objective.
 
-![](assets/img/240826164931.png)
+![](240826164931.png)
 - Table 4: Endangered languages, database:
 https://www.kaggle.com/the-guardian/extinct-languages
 
@@ -190,12 +192,12 @@ Let’s say our goal is to identify variables that contribute to a language beco
 - Secondly, the dataset contains duplicated information in the form of separate vectors for “Countries” and “Country Code.”
 - Another method to reduce the number of features is to roll multiple features into one,
 
-![](assets/img/240826195732.png)
+![](240826195732.png)
 - Table 5: Sample product inventory
 
 For instance, we can remove individual product names and replace the eight product items with fewer categories or subtypes.
 
-![](assets/img/240826195902.png)
+![](240826195902.png)
 - Table 6: Synthesized product inventory
 
 The downside to this transformation is that we have less information about the relationships between specific products.
@@ -204,7 +206,7 @@ The downside to this transformation is that we have less information about the r
 
 In addition to feature selection, you may need to _reduce the number of rows_
 
-![](assets/img/240826200053.png)
+![](240826200053.png)
 - Table 7: Example of row merge
 
 _Non-numeric and categorical row values can be problematic to merge_ while preserving the true value of the original data. Also, row compression is usually _less attainable than feature compression_ and especially for datasets with a high number of features.
@@ -217,10 +219,10 @@ Most algorithms are _not compatible with non-numeric data_.
 
 > _#one-hot_encoding_: transforms values into binary form
 
-![](assets/img/240826200411.png)
+![](240826200411.png)
 - Table 8: Endangered languages
 
-![](assets/img/240826200429.png)
+![](240826200429.png)
 - Table 9: Example of one-hot encoding
 
 Using one-hot encoding, the dataset has expanded to five columns, and we have created three new features from the original feature
@@ -249,7 +251,7 @@ Normalization, however, _usually isn’t recommended for rescaling features with
 
 > _#standardization_: This technique converts unit variance to a _standard normal distribution_ with a mean of zero and a standard deviation (σ) of one.
 
-![](assets/img/240826200714.png)
+![](240826200714.png)
 - Figure 11: Examples of rescaled data using normalization and standardization
 
 Standardization is _generally more effective than normalization when the variability of the feature reflects a bell-curve shape of normal distribution_ and is _often used in unsupervised learning_.
@@ -262,7 +264,7 @@ Missing values in your dataset can be equally frustrating and interfere with you
 
 One approach is to _approximate missing values_ using the mode value. This works best with categorical and binary variable types, such as one to five-star rating systems and positive/negative drug tests respectively.
 
-![](assets/img/240826201037.png)
+![](240826201037.png)
 - Figure 12: A visual example of the mode and median respectively
 
 The second approach is to _approximate missing values using the median value_. This works best with continuous variables, which have an infinite number of possible values, such as house prices.
@@ -306,7 +308,9 @@ Rather than split the data into two segments (one for training and one for testi
 - The first method is exhaustive cross validation, which involves finding and testing all possible combinations
 - The alternative and more common method is non-exhaustive cross validation, known as _#k-fold_validation_.
 
-![](assets/img/240827195127.png)
+### K-Fold Validation
+
+![](240827195127.png)
 Figure 14: k-fold validation
 
 This method, though, is _slower because the training process is multiplied_ by the number of validation sets.
@@ -344,265 +348,354 @@ The goal of linear regression is to _split the data in a way that minimizes the 
 
 As one variable increases, the other variable will increase by the average value denoted by the hyperplane.
 
-Figure 18: Using the slope/hyperplane to make a prediction
+![](20240828092942.png)
+- Figure 18: Using the slope/hyperplane to make a prediction
 
-Linear Regression Formula
+### Linear Regression Formula
 
-y = bx + a.
+$y = bx + a$
+- $a$ point where the hyperplane crosses the y-axis, known as the _y-intercept_
+- $b$ dictates the steepness of the _slope_ and explains the relationship between x and y
 
-“a” is the point where the hyperplane crosses the y-axis, known as the y-intercept
+### Calculation Example
 
-“b” dictates the steepness of the slope and explains the relationship between x and y
+![](240828104631.png)
+- Table 12: Sample dataset
 
-Calculation Example
+$$
+\begin{align*}
+a &= \frac {(\sum y) (\sum x^2) - (\sum y) (\sum xy)} {n(\sum x^2) - (\sum x)^2} 
+\\ \\
+b &= \frac {n(\sum xy) - (\sum x) (\sum y)} {n(\sum x^2) - (\sum x)^2} 
+\end{align*}
+$$
+ Where: 
+ - $\sum x$ = Total sum of all x values (1 + 2 + 1 + 4 + 3 = 11) 
+ - $\sum y$ = Total sum of all y values (3 + 4 + 2 + 7 + 5 = 21) 
+ - $\sum xy$ = Total sum of xy for each row (3 + 8 + 2 + 28 + 15 = 56) 
+ - $\sum x^2$ = Total sum of xx for each row (1 + 4 + 1 + 16 + 9 = 31) 
+ - $n$ = Total number of rows. In the case of this example, n is equal to 5.
 
-Table 12: Sample dataset
+$y_i = b(x_i) + a = 1.441 (x_i) + 1.029$
 
-  Where: Σ = Total sum Σx = Total sum of all x values (1 + 2 + 1 + 4 + 3 = 11) Σy = Total sum of all y values (3 + 4 + 2 + 7 + 5 = 21) Σxy = Total sum of x*y for each row (3 + 8 + 2 + 28 + 15 = 56) Σx2 = Total sum of x*x for each row (1 + 4 + 1 + 16 + 9 = 31) n = Total number of rows. In the case of this example, n is equal to 5.
+![](240828110809.png)
+- Figure 19: y = 1.441x + 1.029 plotted on the scatterplot
 
-Insert the “a” and “b” values into the linear formula. y = bx + a y = 1.441x + 1.029
-
-Figure 19: y = 1.441x + 1.029 plotted on the scatterplot
-
-Multiple Linear Regression
+### Multiple Linear Regression
 
 The y-intercept is still expressed as a, but now there are multiple independent variables (represented as x1, x2, x3, etc.) each with their own respective coefficient (b1, b2, b3, etc).
 
-Discrete Variables
+### Discrete Variables
 
-the output (dependent variable) of linear regression must be continuous in the form of a floating-point or integer
+The output _(dependent variable) of linear regression must be continuous_ in the form of a floating-point or integer
 
-the input (independent variables) can be continuous or categorical.
+The input _(independent variables) can be continuous or categorical_.
 
 For categorical variables, i.e. gender, these variables must be expressed numerically using one-hot encoding
 
-Variable Selection
+### Variable Selection
 
-On the one hand, adding more variables helps to account for more potential factors that control patterns in the data.
+On the one hand, adding _more variables helps to account for more potential factors_ that control patterns in the data.
 
-On the other hand, this rationale only holds if the variables are relevant and possess some correlation/linear relationship with the dependent variable.
+On the other hand, this rationale _only holds if the variables are relevant_ and possess some correlation/linear relationship with the dependent variable.
 
 In multiple linear regression, not only are the independent variables potentially related to the dependent variable, but they are also potentially related to each other.
 
-Figure 20: Simple linear regression (above) and multiple linear regression (below)
+![](240828111345.png)
+- Figure 20: Simple linear regression (above) and multiple linear regression (below)
 
-If a strong linear correlation exists between two independent variables, this can lead to a problem called multi-collinearity.
+If a strong linear correlation exists between two independent variables, this can lead to a problem called _#multi-collinearity_.
 
-When two independent variables are strongly correlated, they have a tendency to cancel each other out and provide the model with little to no unique information.
+### Multi-Collinearity
 
-example of two multi-collinear variables are liters of fuel consumed and liters of fuel in the tank to predict how far a jet plane will fly.
+When two independent variables are strongly correlated, they have a _tendency to cancel each other out_ and provide the model with little to no unique information.
 
-in this case negatively correlated; as one variables increases, the other variable decreases and vice versa.
+Example of two multi-collinear variables are liters of fuel consumed and liters of fuel in the tank to predict how far a jet plane will fly. In this case negatively correlated; as one variables increases, the other variable decreases and vice versa.
 
-To avoid multi-collinearity, we need to check the relationship between each combination of independent variables using a scatterplot, pairplot (a matrix of relationships between variables), or correlation score.
+To avoid multi-collinearity, we need to check the relationship between each combination of independent variables using a _scatterplot_, _pairplot_ (a matrix of relationships between variables), or _correlation score_.
 
-Figure 21: Pairplot with three variables
+![](240828111923.png)
+- Figure 21: Pairplot with three variables
 
-Figure 22: Heatmap with three variables
+![](240828111951.png)
+- Figure 22: Heatmap with three variables
 
 We can also use a pairplot, heatmap or correlation score to check if the independent variables are correlated to the dependent variable (and therefore relevant to the prediction outcome).
 
-CHAPTER QUIZ
+### CHAPTER QUIZ
 
 Using multiple linear regression, your task is to create a model to predict the tip amount guests will leave the restaurant when paying for their meal.
+![](240828112028.png)
 
-1)    The dependent variable for this model should be which variable? A)    size B)    total_bill and tip C)    total_bill D)    tip
+1. The dependent variable for this model should be which variable? 
+	- A size 
+	- B total_bill and tip 
+	- C total_bill 
+	- D tip
+2. From looking only at the data preview above, which variable(s) appear to have a linear relationship with total_bill? 
+	- A smoker 
+	- B total_bill and size 
+	- C time 
+	- D sex
+3. It’s important for the independent variables to be strongly correlated with the dependent variable and one or more of the other independent variables. 
+	- True or False?
 
-2)    From looking only at the data preview above, which variable(s) appear to have a linear relationship with total_bill? A)    smoker B)    total_bill and size C)    time D)    sex
-
-3)    It’s important for the independent variables to be strongly correlated with the dependent variable and one or more of the other independent variables. True or False?
+<details><summary>Ans</summary>{D, tip}, {B, total_bill & size}, {false}</details>
 
 ## 8 LOGISTIC REGRESSION
 
-linear regression is useful for quantifying relationships between variables to predict a continuous outcome. Total bill and size (number of guests) are both examples of continuous variables.
+Linear regression is useful for quantifying relationships between variables to predict a continuous outcome. Total bill and size (number of guests) are both examples of continuous variables.
 
-However, what if we want to predict a categorical variable such as “new customer” or “returning customer”? Unlike linear regression, the dependent variable (y) is no longer a continuous variable (such as total tip) but rather a discrete categorical variable.
+However, what if we want to predict a categorical variable such as “new
+customer” or “returning customer”? Unlike linear regression, the _dependent
+variable (y) is no longer a continuous variable (such as total tip) but rather a
+discrete categorical variable_.
 
-Logistic regression is still a supervised learning technique but produces a qualitative prediction rather than a quantitative prediction. This algorithm is often used to predict two discrete classes, e.g., pregnant or not pregnant.
+Logistic regression is still a _supervised learning technique but produces a
+qualitative prediction_ rather than a quantitative prediction. This algorithm is
+often used to predict two discrete classes, e.g., pregnant or not pregnant.
 
 Using the sigmoid function, logistic regression finds the probability of independent variables (X) producing a discrete dependent variable (y) such as “spam” or “non-spam.”
 
-Where: x = the independent variable you wish to transform e = Euler's constant, 2.718
+$$\begin{align*}
+y = \frac {1}{1 + e^{-x}}
+\end{align*} $$
+Where: 
+- $x$ = the independent variable you wish to transform 
+- $e$ = Euler's constant, 2.718
 
-Figure 23: A sigmoid function used to classify data points
+![](240828133411.png)
+- Figure 23: A sigmoid function used to classify data points
 
-The sigmoid function produces an S-shaped curve that can convert any number and map it into a numerical value between 0 and 1 but without ever reaching those exact limits. Applying this formula, the sigmoid function converts independent variables into an expression of probability between 0 and 1 in relation to the dependent variable.
+### Sigmoid Function
+
+The _#sigmoid_function_ produces an S-shaped curve that can convert any number and map it into a numerical value between 0 and 1 but without ever reaching those exact limits. Applying this formula, the sigmoid function converts independent variables into an expression of _probability between 0 and 1_ in relation to the dependent variable.
 
 Based on the found probabilities of the independent variables, logistic regression assigns each data point to a discrete class.
 
-Figure 24: An example of logistic regression
+![](240828133519.png)
+- Figure 24: An example of logistic regression
 
-Although logistic regression shares a visual resemblance to linear regression, the logistic hyperplane represents a classification/decision boundary rather than a prediction trendline.
+Although logistic regression shares a visual resemblance to linear regression,
+the _logistic hyperplane_ represents a classification/decision boundary rather
+than a prediction trendline. Instead of using the hyperplane to make numeric
+predictions, the hyperplane is used to _divide the dataset into classes_.
 
-instead of using the hyperplane to make numeric predictions, the hyperplane is used to divide the dataset into classes.
+The other distinction between logistic and linear regression is that the
+dependent variable (y) isn’t placed along the y-axis in logistic regression.
+Instead, independent variables can be plotted along both axes, and the class
+(output) of the dependent variable is determined by the position of the data
+point in relation to the decision boundary.
 
-The other distinction between logistic and linear regression is that the dependent variable (y) isn’t placed along the y-axis in logistic regression. Instead, independent variables can be plotted along both axes, and the class (output) of the dependent variable is determined by the position of the data point in relation to the decision boundary.
+### Multinomial Logistic Regression
 
-For classification scenarios with more than two possible discrete outcomes, multinomial logistic regression can be used
+For classification scenarios with more than two possible discrete outcomes,
+multinomial logistic regression can be used
 
+![](240828133708.png)
 Figure 25: An example of multinomial logistic regression
 
-Two tips to remember when using logistic regression are that the dataset should be free of missing values and that all independent variables are independent and not strongly correlated with each other.
+Two tips to remember when using logistic regression are that 
+1. the dataset should be free of missing values 
+2. that all independent variables are independent and not strongly correlated with each other.
 
-Statistics 101: Logistic Regression series on YouTube by Brandon Foltz.[18]
+[Statistics 101: Logistic Regression, An Introduction - YouTube](https://www.youtube.com/watch?v=zAULhNrnuL4&list=PLIeGtxpvyG-JmBQ9XoFD4rs-b3hkcX7Uu)
 
-CHAPTER QUIZ
+### CHAPTER QUIZ
 
-1)    Which three variables (in their current form) could we use as the dependent variable to classify penguins?   2)    Which row(s) contains missing values?   3)    Which variable in the dataset preview is binary?
+Using logistic regression, your task is to classify penguins into different classes based on the following dataset.
+
+![](240828133935.png)
+
+1. Which three variables (in their current form) could we use as the dependent variable to classify penguins?   
+2. Which row(s) contains missing values?   
+3. Which variable in the dataset preview is binary?
+
+<details><summary>Ans</summary>
+1. species, island, sex
+2. 3,8,9
+3. sex
+</details>
 
 ## 9 k-NEAREST NEIGHBORS
 
-k-NN classifies new data points based on their position to nearby data points.
+_#k-NN_ classifies new data points based on their _position to nearby data points_. Similar to a voting system
 
-k-NN is similar to a voting system
-
-Figure 26: An example of k-NN clustering used to predict the class of a new data point
-
-set “k” to determine how many data points we want to use to classify the new data
-
-If we set k to 3, k-NN analyzes the new data point’s position with respect to the three nearest data points (neighbors).
-
-The outcome of selecting the three closest neighbors returns two Class B data points and one Class A data point.
-
-It’s therefore useful to test numerous k combinations to find the best fit and avoid setting k too low or too high.
-
-Setting k too low will increase bias and lead to misclassification
-
-setting k too high will make it computationally expensive.
+![](240828134411.png)
+- Figure 26: An example of k-NN clustering used to predict the class of a new data point
+- set $k$ to determine how many data points we want to use to classify the new data
+- If we set k to 3, k-NN analyzes the new data point’s position with respect to the three nearest data points (neighbors).
+- The outcome of selecting the three closest neighbors returns two Class B data points and one Class A data point.
+- It’s therefore useful to test numerous k combinations to find the best fit and avoid setting k too low or too high.
+- Setting k too low will increase bias and lead to misclassification
+- setting k too high will make it computationally expensive.
 
 Five is the default number of neighbors for this algorithm using Scikit-learn.
 
-this algorithm works best with continuous variables.
+This algorithm _works best with continuous variables_.
 
-While k-NN is generally accurate and easy to comprehend, storing an entire dataset and calculating the distance between each new data point and all existing data points puts a heavy burden on computing resources.
-
-NN is generally not recommended for analyzing large datasets.
+While k-NN is generally accurate and easy to comprehend, storing an entire dataset and calculating the distance between each new data point and all existing data points puts a heavy burden on computing resources. NN is _generally not recommended for analyzing large datasets_.
 
 Another downside is that it can be challenging to apply k-NN to high-dimensional data with a high number of features.
 
-classify penguins into different species using the k-nearest neighbors algorithm, with k set to 5 (neighbors).
+### CHAPTER QUIZ
 
-1)    Which of the following variables should we consider removing from our k-NN model? A. sex B. species C. body_mass_g D. bill_depth_mm
+Classify penguins into different species using the k-nearest neighbors algorithm, with k set to 5 (neighbors).
+![](240828133935.png)
 
-2)    If we wanted to reduce the processing time of our model, which of the following methods is recommended? A.    Increase k from 5 to 10 B.     Reduce k from 10 to 5 C.     Re-run the model and hope for a faster result D.    Increase the size of the training data
+1. Which of the following variables should we consider removing from our k-NN model? 
+	- A. sex
+	- B. species
+	- C. body_mass_g
+	- D. bill_depth_mm
+1. If we wanted to reduce the processing time of our model, which of the following methods is recommended? 
+   - A. Increase k from 5 to 10 
+   - B. Reduce k from 10 to 5 
+   - C. Re-run the model and hope for a faster result 
+   - D. Increase the size of the training data
+2. To include the variable ‘sex’ in our model, which data scrubbing technique do we need to use?
 
-3)    To include the variable ‘sex’ in our model, which data scrubbing technique do we need to use?
-
-ANSWERS   1)    A, sex (Binary variables should only be used when critical to the model’s accuracy.)   2)    B, Reduce k from 10 to 5   3)    One-hot encoding (to convert the variable into a numerical identifier of 0 or 1)
+<details><summary>ANS</summary>
+<li>1. A, sex (Binary variables should only be used when critical to the model’s accuracy.)   
+<li>2. B, Reduce k from 10 to 5   
+<li>3. One-hot encoding (to convert the variable into a numerical identifier of 0 or 1)
+</details>
 
 ## 10 k-MEANS CLUSTERING
 
-grouping or clustering data points that share similar attributes using unsupervised learning.
+> _#k-means_clustering_ is grouping or clustering data points that share similar attributes using unsupervised learning.
 
 An online business, for example, wants to examine a segment of customers that purchase at the same time of the year and discern what factors influence their purchasing behavior.
 
-As an unsupervised learning algorithm, k-means clustering attempts to divide data into k number of discrete groups and is highly effective at uncovering new patterns.
+As an unsupervised learning algorithm, k-means clustering attempts to _divide data into k number of discrete groups_ and is highly effective at uncovering new patterns.
 
-Figure 29: Comparison of original data and clustered data using k-means
+![](240828142042.png)
+- Figure 29: Comparison of original data and clustered data using k-means
 
-splitting data into k number of clusters, with k representing the number of clusters you wish to create.
+- Split data into k number of clusters, with k representing the number of clusters you wish to create.
+- Examine the unclustered data and manually select a centroid for each cluster. That centroid then forms the epicenter of an individual cluster.
+- The remaining data points on the scatterplot are then assigned to the nearest centroid by measuring the Euclidean distance.
+- Each data point can be assigned to only one cluster, and each cluster is discrete.
+- No overlap between clusters and no case of nesting a cluster inside another cluster.
+- After all data points have been allocated to a centroid, the next step is to aggregate the mean value of the data points in each cluster, which can be found by calculating the average x and y values of the data points contained in each cluster.
+- Next, take the mean value of the data points in each cluster and plug in those x and y values to update your centroid coordinates. This will most likely result in one or more changes to the location of your centroid(s).
+- Like musical chairs, the remaining data points rush to the closest centroid to form k number of clusters.
+- Should any data point on the scatterplot switch clusters with the changing of centroids, the previous step is repeated.
 
-examine the unclustered data and manually select a centroid for each cluster. That centroid then forms the epicenter of an individual cluster.
 
-The remaining data points on the scatterplot are then assigned to the nearest centroid by measuring the Euclidean distance.
+![](240828142404.png)
+- Figure 30: Calculating Euclidean distance
 
-Figure 30: Calculating Euclidean distance
+![](20240828142512.png)
+- Figure 32: Two existing data points are nominated as the centroids
 
-Each data point can be assigned to only one cluster, and each cluster is discrete.
+![](240828142623.png)
+- Figure 34: The centroid coordinates for each cluster are updated to reflect the cluster’s mean value. The two previous centroids stay in their original position and two new centroids are added to the scatterplot. Lastly, as one data point has switched from the right cluster to the left cluster, the centroids of both clusters need to be updated one last time.
 
-no overlap between clusters and no case of nesting a cluster inside another cluster.
+![](240828142649.png)
+- Figure 35: Two final clusters are produced based on the updated centroids for each cluster
 
-After all data points have been allocated to a centroid, the next step is to aggregate the mean value of the data points in each cluster, which can be found by calculating the average x and y values of the data points contained in each cluster.
+### Setting k
 
-Next, take the mean value of the data points in each cluster and plug in those x and y values to update your centroid coordinates. This will most likely result in one or more changes to the location of your centroid(s).
-
-Like musical chairs, the remaining data points rush to the closest centroid to form k number of clusters.
-
-Should any data point on the scatterplot switch clusters with the changing of centroids, the previous step is repeated.
-
-Figure 31: Sample data points are plotted on a scatterplot
-
-Figure 32: Two existing data points are nominated as the centroids
-
-Figure 33: Two clusters are formed after calculating the Euclidean distance of the remaining data points to the centroids.
-
-Figure 34: The centroid coordinates for each cluster are updated to reflect the cluster’s mean value. The two previous centroids stay in their original position and two new centroids are added to the scatterplot. Lastly, as one data point has switched from the right cluster to the left cluster, the centroids of both clusters need to be updated one last time.
-
-Figure 35: Two final clusters are produced based on the updated centroids for each cluster
-
-Setting k
-
-In general, as k increases, clusters become smaller and variance falls.
-
-However, the downside is that neighboring clusters become less distinct from one another as k increases.
+In general, _as k increases, clusters become smaller and variance falls_. However, the downside is that neighboring clusters become less distinct from one another as k increases.
 
 If you set k to the same number of data points in your dataset, each data point automatically becomes a standalone cluster.
 
 In order to optimize k, you may wish to use a scree plot for guidance.
 
-scree plot charts the degree of scattering (variance) inside a cluster as the total number of clusters increases.
+### Scree Plot
 
-A scree plot compares the Sum of Squared Error (SSE) for each variation of total clusters.
+> _#Scree_plot_ charts the _degree of scattering_ (variance) inside a cluster as the total number of clusters increases.
 
-Figure 36: A scree plot
+A scree plot compares the _Sum of Squared Error #SSE_ for each variation of total clusters.
 
-In general, you should opt for a cluster solution where SSE subsides dramatically to the left on the scree plot but before it reaches a point of negligible change with cluster variations to its right.
+![](240828143013.png)
+- Figure 36: A scree plot
 
-Another useful technique to decide the number of cluster solutions is to divide the total number of data points (n) by two and finding the square root.
+In general, you should _opt for a cluster solution where SSE subsides
+dramatically to the left_ on the scree plot but before it reaches a point of
+negligible change with cluster variations to its right.
 
-A more simple and non-mathematical approach to setting k is to apply domain knowledge.
+Another useful technique to decide the number of cluster solutions is to divide
+the total number of data points (n) by two and finding the square root $\sqrt(n/2)$.
 
-if I am analyzing data about visitors to the website
+A more simple and non-mathematical approach to setting k is to _apply domain knowledge_.
 
-Because I already know there is a significant discrepancy in spending behavior between returning visitors and new visitors.
+e.g. If I am analyzing data about visitors to the website. Because I already know there is a significant discrepancy in spending behavior between returning visitors and new visitors. But understand that the effectiveness of “domain knowledge” diminishes dramatically past a low number of k clusters.
 
-but understand that the effectiveness of “domain knowledge” diminishes dramatically past a low number of k clusters.
+Domain knowledge might be sufficient for determining two to four clusters but less valuable when choosing between a higher number of clusters, such as 20 or 21 clusters.
 
-domain knowledge might be sufficient for determining two to four clusters but less valuable when choosing between a higher number of clusters, such as 20 or 21 clusters.
+### CHAPTER QUIZ   
 
-CHAPTER QUIZ   Your task is to group the flights dataset (which tracks flights from 1949 to 1960) into discrete clusters using k-means clustering.
+Your task is to group the flights dataset (which tracks flights from 1949 to 1960) into discrete clusters using k-means clustering.
 
-1)    Using k-means clustering to analyze all 3 variables, what might be a good initial number of k clusters (using only domain/general knowledge) to train the model? k = 2 k = 100 k = 12 k = 3
+![](240828143454.png)
+1. Using k-means clustering to analyze all 3 variables, what might be a good initial number of k clusters (using only domain/general knowledge) to train the model? 
+- k = 2 
+- k = 100 
+- k = 12 
+- k = 3
 
-What mathematical technique might we use to find the appropriate number of clusters? A.    Big elbow method B.     Mean absolute error C.     Scree plot D.    One-hot encoding
+2. What mathematical technique might we use to find the appropriate number of clusters?
+- A. Big elbow method 
+- B. Mean absolute error 
+- C. Scree plot 
+- D. One-hot encoding
 
-Which variable requires data scrubbing?
+3. Which variable requires data scrubbing?
+
+<details><summary>Ans</summary>
+<li>12 (months)
+<li>C (scree plot)
+<li>month
+</details>
 
 ## 11 BIAS & VARIANCE
 
-most algorithms have many different hyperparameters also leads to a vast number of potential outcomes.
+Most algorithms have many different hyperparameters also leads to a vast number of potential outcomes.
 
-Figure 37: Example of hyperparameters in Python for the algorithm gradient boosting
+Example of hyperparameters in Python for the algorithm gradient boosting
+```python
+model = ensemble.GradientBoostingRegressor(n_estimators=150,
+										  learning_rate=0.1,
+										  max_depth=4,
+										  min_samples_split=4,
+										  min_samples_leaf=4,
+										  max_features=0.5,
+										  loss='huber'
+										  )
+```
 
 A constant challenge in machine learning is navigating underfitting and overfitting, which describe how closely your model follows the actual patterns of the data.
 
-Bias refers to the gap between the value predicted by your model and the actual value of the data.
+### Bias
+
+> _#Bias_ refers to the gap between the value predicted by your model and the actual value of the data.
 
 In the case of high bias, your predictions are likely to be skewed in a particular direction away from the true values.
 
-Variance describes how scattered your predicted values are in relation to each other.
+### Variance
 
-Figure 38: Shooting targets used to represent bias and variance
+> _#Variance_ describes how scattered your predicted values are in relation to each other.
 
-Ideally, you want a situation where there’s both low variance and low bias. In reality, however, there’s a trade-off between optimal bias and optimal variance.
+![](240828144627.png)
+- Figure 38: Shooting targets used to represent bias and variance
 
-Bias and variance both contribute to error but it’s the prediction error that you want to minimize, not the bias or variance specifically.
+### Prediction Error
 
-Peddling algorithms through the data is the easy part; the hard part is navigating bias and variance while maintaining a state of balance in your model.
+Ideally, you want a situation where there’s both low variance and low bias. In reality, however, there’s a _trade-off between optimal bias and optimal variance_. Bias and variance _both contribute to error but it’s the prediction error that you want to minimize_, not the bias or variance specifically.
 
-Figure 39: Model complexity based on the prediction error
+![](240828144729.png)
+- Figure 39: Model complexity based on the prediction error
 
-In Figure 39, we can see two curves.
+In Figure 39, we can see two curves. The upper curve represents the test data, and the lower curve depicts the training data. From the left, both curves begin at a point of high prediction error due to low variance and high bias. As they move toward the right, they change to the opposite: high variance and low bias.
 
-The upper curve represents the test data, and the lower curve depicts the training data.
+![](240828144839.png)
+- Figure 40: _Underfitting_ on the left and _overfitting_ on the right
 
-From the left, both curves begin at a point of high prediction error due to low variance and high bias. As they move toward the right, they change to the opposite: high variance and low bias.
+### Underfitting / Overfitting
 
-Figure 40: Underfitting on the left and overfitting on the right
-
-the model being overly simple and inflexible (underfitting) or overly complex and flexible (overfitting).
-
-Underfitting (low variance, high bias) on the left and overfitting (high variance, low bias) on the right are shown in these two scatterplots.
+The model being overly simple and inflexible (underfitting) or overly complex and flexible (overfitting). _#Underfitting_ (low variance, high bias) on the left and _#overfitting_ (high variance, low bias) on the right are shown in these two scatterplots.
 
 A natural temptation is to add complexity to the model (as shown on the right) to improve accuracy, but this can, in turn, lead to overfitting.
 
@@ -610,15 +703,16 @@ Underfitting is when your model is overly simple, and again, has not scratched 
 
 An advanced strategy to combat overfitting is to introduce regularization, which reduces the risk of overfitting by constraining the model to make it simpler.
 
-one other technique to improve model accuracy is to perform cross validation, as covered earlier in Chapter 6, to minimize pattern discrepancies between the training data and the test data.
+One other technique to improve model accuracy is to perform cross validation, as covered earlier in Chapter 6, to minimize pattern discrepancies between the training data and the test data.
 
 ## 12 SUPPORT VECTOR MACHINES
 
-SVM is mostly used as a classification technique for predicting categorical outcomes.
+_#SVM_ is mostly used as a classification technique for _predicting categorical outcomes_.
 
-SVM is similar to logistic regression, in that it’s used to filter data into a binary or multiclass target variable.
+SVM is _similar to logistic regression_, in that it’s used to filter data into a binary or multiclass target variable.
 
-Figure 41: Logistic regression versus SVM
+![](240828155622.png)
+- Figure 41: Logistic regression versus SVM
 
 gray zone that denotes margin, which is the distance between the decision boundary and the nearest data point, multiplied by two.
 
