@@ -333,20 +333,14 @@ As the _“Hello World”_ of supervised learning algorithms, regression analysi
 Using the Seinfeld TV sitcom series as our data, let’s start by plotting the two following variables, with season number as the x coordinate and the number of viewers per season (in millions) as the y coordinate.
 
 ![](240827195455.png)
-Table 11: Seinfeld dataset
+- Table 11: Seinfeld dataset
 
-![](240827195508.png)
-Figure 15: Seinfeld dataset plotted on a scatterplot
+The goal of linear regression is to _split the data in a way that minimizes the distance between the hyperplane and the observed values_.
 
-Figure 16: Linear regression hyperplane
+![](240827195831.png)
+- Figure 17: Error is the distance between the hyperplane and the observed value
 
-a two-dimensional space, a hyperplane serves as a (flat) trendline,
-
-The goal of linear regression is to split the data in a way that minimizes the distance between the hyperplane and the observed values.
-
-Figure 17: Error is the distance between the hyperplane and the observed value
-
-The Slope
+### The Slope
 
 As one variable increases, the other variable will increase by the average value denoted by the hyperplane.
 
