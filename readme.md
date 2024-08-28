@@ -271,7 +271,6 @@ The second approach is to _approximate missing values using the median value_. T
 
 As a last resort, _rows with missing values can be removed altogether_. The obvious downside to this approach is having less data to analyze and potentially less comprehensive insight.
 
-# aaa
 ## 6 SETTING UP YOUR DATA
 
 After cleaning your dataset, the next job is to split the data into two segments for training and testing, also known as split validation.
