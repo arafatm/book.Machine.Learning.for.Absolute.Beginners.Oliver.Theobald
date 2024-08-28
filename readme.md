@@ -301,25 +301,26 @@ While split validation can be effective for developing models using existing dat
 
 Rather than split the data into two segments (one for training and one for testing), you can implement what’s called cross validation.
 
-Cross validation maximizes the availability of training data by splitting data into various combinations and testing each specific combination.
+> _#Cross_validation_ maximizes the availability of training data by _splitting data into various combinations_ and testing each specific combination.
 
-The first method is exhaustive cross validation, which involves finding and testing all possible combinations
+- The first method is exhaustive cross validation, which involves finding and testing all possible combinations
+- The alternative and more common method is non-exhaustive cross validation, known as _#k-fold_validation_.
 
-The alternative and more common method is non-exhaustive cross validation, known as k-fold validation.
-
+![](assets/img/240827195127.png)
 Figure 14: k-fold validation
 
-This method, though, is slower because the training process is multiplied by the number of validation sets.
+This method, though, is _slower because the training process is multiplied_ by the number of validation sets.
 
-How Much Data Do I Need?
+### How Much Data Do I Need?
 
-machine learning works best when your training dataset includes a full range of feature combinations.
+Machine learning works best when your training dataset includes a _full range of feature combinations_.
 
-At an absolute minimum, a basic machine learning model should contain ten times as many data points as the total number of features.
+At an absolute minimum, a basic machine learning model should contain _ten times as many data points as the total number of features_.
 
-there is a natural diminishing rate of return after an adequate volume of training data (that’s widely representative of the problem) has been reached.
+There is a natural _diminishing rate of return_ after an adequate volume of training data (that’s widely representative of the problem) has been reached.
 
-For datasets with less than 10,000 samples, clustering and dimensionality reduction algorithms can be highly effective, whereas regression analysis and classification algorithms are more suitable for datasets with less than 100,000 samples.
+- For datasets with _less than 10,000_ samples, clustering and dimensionality reduction algorithms can be highly effective,
+- whereas regression analysis and classification algorithms are more suitable for datasets with less than 100,000 samples.
 
 Neural networks require even more samples to run effectively and are more cost-effective and time-efficient for working with massive quantities of data.
 
@@ -327,10 +328,14 @@ Scikit-learn has a cheat sheet for matching algorithms to different datasets at 
 
 ## 7 LINEAR REGRESSION
 
+As the _“Hello World”_ of supervised learning algorithms, regression analysis is a simple technique for predicting an unknown variable using the results you do know.
+
 Using the Seinfeld TV sitcom series as our data, let’s start by plotting the two following variables, with season number as the x coordinate and the number of viewers per season (in millions) as the y coordinate.
 
+![](240827195455.png)
 Table 11: Seinfeld dataset
 
+![](240827195508.png)
 Figure 15: Seinfeld dataset plotted on a scatterplot
 
 Figure 16: Linear regression hyperplane
