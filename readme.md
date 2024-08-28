@@ -258,7 +258,7 @@ Standardization is _generally recommended when preparing data for support vector
 
 ### Missing Data
 
-Missing values in your dataset can be equally frustrating and interfere with your analysis and the model’s predictions. There are, however, strategies to minimize the negative impact of missing data.
+Missing values in your dataset can be equally frustrating and interfere with your analysis and the model’s predictions. There are, however, _strategies to minimize the negative impact of missing data_.
 
 One approach is to _approximate missing values_ using the mode value. This works best with categorical and binary variable types, such as one to five-star rating systems and positive/negative drug tests respectively.
 
@@ -271,15 +271,13 @@ As a last resort, _rows with missing values can be removed altogether_. The obvi
 
 ## 6 SETTING UP YOUR DATA
 
-After cleaning your dataset, the next job is to split the data into two segments for training and testing, also known as split validation.
+After cleaning your dataset, the next job is to split the data into two segments for _training and testing_, also known as _#split_validation_.
 
-usually 70/30 or 80/20.
+Usually 70/30 or 80/20.
+- training data should account for 70 percent to 80 percent
+- 20 percent to 30 percent of rows are left for your test data.
 
-training data should account for 70 percent to 80 percent
-
-20 percent to 30 percent of rows are left for your test data.
-
-Before you split your data, it’s essential that you randomize the row order. This helps to avoid bias in your model,
+Before you split your data, it’s essential that you _randomize the row order_. This helps to avoid bias in your model,
 
 After randomizing the data, you can begin to design your model and apply it to the training data.
 
