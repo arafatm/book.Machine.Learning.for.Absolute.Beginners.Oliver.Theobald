@@ -277,21 +277,25 @@ Usually 70/30 or 80/20.
 - training data should account for 70 percent to 80 percent
 - 20 percent to 30 percent of rows are left for your test data.
 
-Before you split your data, it’s essential that you _randomize the row order_. This helps to avoid bias in your model,
+Before you split your data, it’s essential that you _randomize the row order_. This helps to avoid bias in your model.
 
 After randomizing the data, you can begin to design your model and apply it to the training data.
 
-The next step is to measure how well the model performed.
+The next step is to _measure how well the model performed_.
 
-Area under the curve (AUC) – Receiver Operating Characteristic (ROC)[16], confusion matrix, recall, and accuracy are four examples of performance metrics used with classification tasks
+Four examples of performance metrics used with classification tasks
+- Area under the curve (AUC) 
+- Receiver Operating Characteristic (ROC)[16], 
+- Confusion matrix, 
+- recall, and accuracy 
 
-mean absolute error and root mean square error (RMSE) are commonly used to assess models that provide a numeric output
+_Mean absolute error_ and _root mean square error (RMSE)_ are commonly used to assess models that provide a numeric output
 
 Using Scikit-learn, mean absolute error is found by inputting the X values from the training data into the model and generating a prediction for each row in the dataset.
 
-You’ll know that the model is accurate when the error rate for the training and test dataset is low, which means the model has learned the dataset’s underlying trends and patterns.
+You’ll know that the model is _accurate when the error rate for the training and test dataset is low_, which means the model has learned the dataset’s underlying trends and patterns.
 
-Cross Validation
+### Cross Validation
 
 While split validation can be effective for developing models using existing data, question marks naturally arise over whether the model can remain accurate when used on new data.
 
