@@ -712,21 +712,13 @@ _#SVM_ is mostly used as a classification technique for _predicting categorical 
 SVM is _similar to logistic regression_, in that it’s used to filter data into a binary or multiclass target variable.
 
 ![](240828155622.png)
-- Figure 41: Logistic regression versus SVM
+- Figure 41: Logistic regression versus SVM. Gray zone denotes _margin_, which is the distance between the decision boundary and the nearest data point, multiplied by two.
 
-gray zone that denotes margin, which is the distance between the decision boundary and the nearest data point, multiplied by two.
+![](240828171520.png)
+- Figure 42: A new data point is added to the scatterplot. The new data point is a circle, but it’s located incorrectly on the left side of the logistic (A) _decision boundary_. The new data point, though, remains correctly located on the right side of the SVM (B) decision boundary (designated for circles) courtesy of ample “support” supplied by the margin.
 
-Figure 42: A new data point is added to the scatterplot
-
-The new data point is a circle, but it’s located incorrectly on the left side of the logistic (A) decision boundary
-
-The new data point, though, remains correctly located on the right side of the SVM (B) decision boundary (designated for circles) courtesy of ample “support” supplied by the margin.
-
-Figure 43: Mitigating anomalies
-
-A limitation of standard logistic regression is that it goes out of its way to fit outliers and anomalies
-
-SVM, however, is less sensitive to such data points and actually minimizes their impact on the final location of the boundary line.
+![](240828171534.png)
+Figure 43: Mitigating _anomalies_. A limitation of standard logistic regression is that it goes out of its way to fit outliers and anomalies. SVM, however, is less sensitive to such data points and actually minimizes their impact on the final location of the boundary line.
 
 The SVM boundary can also be modified to ignore misclassified cases in the training data using a hyperparameter called C.
 
