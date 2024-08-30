@@ -31,7 +31,7 @@ After you have developed a model based on patterns extracted from the training d
 
 Machine learning, data mining, artificial intelligence, and computer programming all fall under the umbrella of computer science,
 
-![](img/240826163927.png)
+![](assets/img/240826163927.png)
 - Figure 4: Visual representation of the relationship between data-related fields
 
 | Technique              | Input known | Output known | Methodology                                                                                        |     |
@@ -61,12 +61,12 @@ Machine learning, data mining, artificial intelligence, and computer programming
 
 With access to the selling price of other similar cars, the supervised learning model can _work backward_ to determine the relationship between a car’s value (output) and its characteristics (input). The input features of your own car can then be inputted into the model to generate a price prediction.
 
-![](img/240826165546.png)
+![](assets/img/240826165546.png)
 - Figure 5: Inputs (X) are fed to the model to generate a new prediction (y)
 
 When building a supervised learning model, each item (i.e. car, product, customer) must have labeled input and output values—known in data science as a _#labeled_dataset_
 
-![](img/240826165628.png)
+![](assets/img/240826165628.png)
 - Figure 6: Labeled data vs. unlabeled data
 
 _#Common_algorithms_ used in supervised learning include:
@@ -130,7 +130,7 @@ Contained in each column is a feature. A _#feature is also known as a variable, 
 - Rows are sometimes referred to as a _case or value_
 - Each column is known also as a vector.
 
-![](img/240826164511.png)
+![](assets/img/240826164511.png)
 - Figure 8: The y value is often but not always expressed in the far-right vector
 
 _Scatterplots_, including 2-D, 3-D, and 4-D plots, are also packed into the
@@ -185,7 +185,7 @@ Datasets need upfront cleaning and human manipulation before they’re ready for
 
 > _#feature_selection_ identify which variables are most relevant to your hypothesis or objective.
 
-![](img/240826164931.png)
+![](assets/img/240826164931.png)
 - Table 4: Endangered languages, database:
 https://www.kaggle.com/the-guardian/extinct-languages
 
@@ -194,12 +194,12 @@ Let’s say our goal is to identify variables that contribute to a language beco
 - Secondly, the dataset contains duplicated information in the form of separate vectors for “Countries” and “Country Code.”
 - Another method to reduce the number of features is to roll multiple features into one,
 
-![](img/240826195732.png)
+![](assets/img/240826195732.png)
 - Table 5: Sample product inventory
 
 For instance, we can remove individual product names and replace the eight product items with fewer categories or subtypes.
 
-![](img/240826195902.png)
+![](assets/img/240826195902.png)
 - Table 6: Synthesized product inventory
 
 The downside to this transformation is that we have less information about the relationships between specific products.
@@ -208,7 +208,7 @@ The downside to this transformation is that we have less information about the r
 
 In addition to feature selection, you may need to _reduce the number of rows_
 
-![](img/240826200053.png)
+![](assets/img/240826200053.png)
 - Table 7: Example of row merge
 
 _Non-numeric and categorical row values can be problematic to merge_ while preserving the true value of the original data. Also, row compression is usually _less attainable than feature compression_ and especially for datasets with a high number of features.
@@ -221,10 +221,10 @@ Most algorithms are _not compatible with non-numeric data_.
 
 > _#one-hot_encoding_: transforms values into binary form
 
-![](img/240826200411.png)
+![](assets/img/240826200411.png)
 - Table 8: Endangered languages
 
-![](img/240826200429.png)
+![](assets/img/240826200429.png)
 - Table 9: Example of one-hot encoding
 
 Using one-hot encoding, the dataset has expanded to five columns, and we have created three new features from the original feature
@@ -253,7 +253,7 @@ Normalization, however, _usually isn’t recommended for rescaling features with
 
 > _#standardization_: This technique converts unit variance to a _standard normal distribution_ with a mean of zero and a standard deviation (σ) of one.
 
-![](img/240826200714.png)
+![](assets/img/240826200714.png)
 - Figure 11: Examples of rescaled data using normalization and standardization
 
 Standardization is _generally more effective than normalization when the variability of the feature reflects a bell-curve shape of normal distribution_ and is _often used in unsupervised learning_.
@@ -266,7 +266,7 @@ Missing values in your dataset can be equally frustrating and interfere with you
 
 One approach is to _approximate missing values_ using the mode value. This works best with categorical and binary variable types, such as one to five-star rating systems and positive/negative drug tests respectively.
 
-![](img/240826201037.png)
+![](assets/img/240826201037.png)
 - Figure 12: A visual example of the mode and median respectively
 
 The second approach is to _approximate missing values using the median value_. This works best with continuous variables, which have an infinite number of possible values, such as house prices.
@@ -312,7 +312,7 @@ Rather than split the data into two segments (one for training and one for testi
 
 ### K-Fold Validation
 
-![](img/240827195127.png)
+![](assets/img/240827195127.png)
 Figure 14: k-fold validation
 
 This method, though, is _slower because the training process is multiplied_ by the number of validation sets.
@@ -338,19 +338,19 @@ As the _“Hello World”_ of supervised learning algorithms, regression analysi
 
 Using the Seinfeld TV sitcom series as our data, let’s start by plotting the two following variables, with season number as the x coordinate and the number of viewers per season (in millions) as the y coordinate.
 
-![](img/240827195455.png)
+![](assets/img/240827195455.png)
 - Table 11: Seinfeld dataset
 
 The goal of linear regression is to _split the data in a way that minimizes the distance between the hyperplane and the observed values_.
 
-![](img/240827195831.png)
+![](assets/img/240827195831.png)
 - Figure 17: Error is the distance between the hyperplane and the observed value
 
 ### The Slope
 
 As one variable increases, the other variable will increase by the average value denoted by the hyperplane.
 
-![](img/20240828092942.png)
+![](assets/img/20240828092942.png)
 - Figure 18: Using the slope/hyperplane to make a prediction
 
 ### Linear Regression Formula
@@ -361,7 +361,7 @@ $y = bx + a$
 
 ### Calculation Example
 
-![](img/240828104631.png)
+![](assets/img/240828104631.png)
 - Table 12: Sample dataset
 
 $$
@@ -380,7 +380,7 @@ $$
 
 $y_i = b(x_i) + a = 1.441 (x_i) + 1.029$
 
-![](img/240828110809.png)
+![](assets/img/240828110809.png)
 - Figure 19: y = 1.441x + 1.029 plotted on the scatterplot
 
 ### Multiple Linear Regression
@@ -403,7 +403,7 @@ On the other hand, this rationale _only holds if the variables are relevant_ and
 
 In multiple linear regression, not only are the independent variables potentially related to the dependent variable, but they are also potentially related to each other.
 
-![](img/240828111345.png)
+![](assets/img/240828111345.png)
 - Figure 20: Simple linear regression (above) and multiple linear regression (below)
 
 If a strong linear correlation exists between two independent variables, this can lead to a problem called _#multi-collinearity_.
@@ -416,10 +416,10 @@ Example of two multi-collinear variables are liters of fuel consumed and liters 
 
 To avoid multi-collinearity, we need to check the relationship between each combination of independent variables using a _scatterplot_, _pairplot_ (a matrix of relationships between variables), or _correlation score_.
 
-![](img/240828111923.png)
+![](assets/img/240828111923.png)
 - Figure 21: Pairplot with three variables
 
-![](img/240828111951.png)
+![](assets/img/240828111951.png)
 - Figure 22: Heatmap with three variables
 
 We can also use a pairplot, heatmap or correlation score to check if the independent variables are correlated to the dependent variable (and therefore relevant to the prediction outcome).
@@ -427,7 +427,7 @@ We can also use a pairplot, heatmap or correlation score to check if the indepen
 ### CHAPTER QUIZ
 
 Using multiple linear regression, your task is to create a model to predict the tip amount guests will leave the restaurant when paying for their meal.
-![](img/240828112028.png)
+![](assets/img/240828112028.png)
 
 1. The dependent variable for this model should be which variable? 
 	- A size 
@@ -466,7 +466,7 @@ Where:
 - $x$ = the independent variable you wish to transform 
 - $e$ = Euler's constant, 2.718
 
-![](img/240828133411.png)
+![](assets/img/240828133411.png)
 - Figure 23: A sigmoid function used to classify data points
 
 ### Sigmoid Function
@@ -475,7 +475,7 @@ The _#sigmoid_function_ produces an S-shaped curve that can convert any number a
 
 Based on the found probabilities of the independent variables, logistic regression assigns each data point to a discrete class.
 
-![](img/240828133519.png)
+![](assets/img/240828133519.png)
 - Figure 24: An example of logistic regression
 
 Although logistic regression shares a visual resemblance to linear regression,
@@ -494,7 +494,7 @@ point in relation to the decision boundary.
 For classification scenarios with more than two possible discrete outcomes,
 multinomial logistic regression can be used
 
-![](img/240828133708.png)
+![](assets/img/240828133708.png)
 Figure 25: An example of multinomial logistic regression
 
 Two tips to remember when using logistic regression are that 
@@ -507,7 +507,7 @@ Two tips to remember when using logistic regression are that
 
 Using logistic regression, your task is to classify penguins into different classes based on the following dataset.
 
-![](img/240828133935.png)
+![](assets/img/240828133935.png)
 
 1. Which three variables (in their current form) could we use as the dependent variable to classify penguins?   
 2. Which row(s) contains missing values?   
@@ -523,7 +523,7 @@ Using logistic regression, your task is to classify penguins into different clas
 
 _#k-NN_ classifies new data points based on their _position to nearby data points_. Similar to a voting system
 
-![](img/240828134411.png)
+![](assets/img/240828134411.png)
 - Figure 26: An example of k-NN clustering used to predict the class of a new data point
 - set $k$ to determine how many data points we want to use to classify the new data
 - If we set k to 3, k-NN analyzes the new data point’s position with respect to the three nearest data points (neighbors).
@@ -543,7 +543,7 @@ Another downside is that it can be challenging to apply k-NN to high-dimensional
 ### CHAPTER QUIZ
 
 Classify penguins into different species using the k-nearest neighbors algorithm, with k set to 5 (neighbors).
-![](img/240828133935.png)
+![](assets/img/240828133935.png)
 
 1. Which of the following variables should we consider removing from our k-NN model? 
 	- A. sex
@@ -571,7 +571,7 @@ An online business, for example, wants to examine a segment of customers that pu
 
 As an unsupervised learning algorithm, k-means clustering attempts to _divide data into k number of discrete groups_ and is highly effective at uncovering new patterns.
 
-![](img/240828142042.png)
+![](assets/img/240828142042.png)
 - Figure 29: Comparison of original data and clustered data using k-means
 
 - Split data into k number of clusters, with k representing the number of clusters you wish to create.
@@ -585,16 +585,16 @@ As an unsupervised learning algorithm, k-means clustering attempts to _divide da
 - Should any data point on the scatterplot switch clusters with the changing of centroids, the previous step is repeated.
 
 
-![](img/240828142404.png)
+![](assets/img/240828142404.png)
 - Figure 30: Calculating Euclidean distance
 
-![](img/20240828142512.png)
+![](assets/img/20240828142512.png)
 - Figure 32: Two existing data points are nominated as the centroids
 
-![](img/240828142623.png)
+![](assets/img/240828142623.png)
 - Figure 34: The centroid coordinates for each cluster are updated to reflect the cluster’s mean value. The two previous centroids stay in their original position and two new centroids are added to the scatterplot. Lastly, as one data point has switched from the right cluster to the left cluster, the centroids of both clusters need to be updated one last time.
 
-![](img/240828142649.png)
+![](assets/img/240828142649.png)
 - Figure 35: Two final clusters are produced based on the updated centroids for each cluster
 
 ### Setting k
@@ -611,7 +611,7 @@ In order to optimize k, you may wish to use a scree plot for guidance.
 
 A scree plot compares the _Sum of Squared Error #SSE_ for each variation of total clusters.
 
-![](img/240828143013.png)
+![](assets/img/240828143013.png)
 - Figure 36: A scree plot
 
 In general, you should _opt for a cluster solution where SSE subsides
@@ -631,7 +631,7 @@ Domain knowledge might be sufficient for determining two to four clusters but le
 
 Your task is to group the flights dataset (which tracks flights from 1949 to 1960) into discrete clusters using k-means clustering.
 
-![](img/240828143454.png)
+![](assets/img/240828143454.png)
 1. Using k-means clustering to analyze all 3 variables, what might be a good initial number of k clusters (using only domain/general knowledge) to train the model? 
 - k = 2 
 - k = 100 
@@ -680,19 +680,19 @@ In the case of high bias, your predictions are likely to be skewed in a particul
 
 > _#Variance_ describes how scattered your predicted values are in relation to each other.
 
-![](img/240828144627.png)
+![](assets/img/240828144627.png)
 - Figure 38: Shooting targets used to represent bias and variance
 
 ### Prediction Error
 
 Ideally, you want a situation where there’s both low variance and low bias. In reality, however, there’s a _trade-off between optimal bias and optimal variance_. Bias and variance _both contribute to error but it’s the prediction error that you want to minimize_, not the bias or variance specifically.
 
-![](img/240828144729.png)
+![](assets/img/240828144729.png)
 - Figure 39: Model complexity based on the prediction error
 
 In Figure 39, we can see two curves. The upper curve represents the test data, and the lower curve depicts the training data. From the left, both curves begin at a point of high prediction error due to low variance and high bias. As they move toward the right, they change to the opposite: high variance and low bias.
 
-![](img/240828144839.png)
+![](assets/img/240828144839.png)
 - Figure 40: _Underfitting_ on the left and _overfitting_ on the right
 
 ### Underfitting / Overfitting
@@ -713,13 +713,13 @@ _#SVM_ is mostly used as a classification technique for _predicting categorical 
 
 SVM is _similar to logistic regression_, in that it’s used to filter data into a binary or multiclass target variable.
 
-![](img/240828155622.png)
+![](assets/img/240828155622.png)
 - Figure 41: Logistic regression versus SVM. Gray zone denotes _margin_, which is the distance between the decision boundary and the nearest data point, multiplied by two.
 
-![](img/240828171520.png)
+![](assets/img/240828171520.png)
 - Figure 42: A new data point is added to the scatterplot. The new data point is a circle, but it’s located incorrectly on the left side of the logistic (A) _decision boundary_. The new data point, though, remains correctly located on the right side of the SVM (B) decision boundary (designated for circles) courtesy of ample “support” supplied by the margin.
 
-![](img/240828171534.png)
+![](assets/img/240828171534.png)
 Figure 43: Mitigating _anomalies_. 
 
 A limitation of standard logistic regression is that it goes out of its way to fit outliers and anomalies. SVM, however, is less sensitive to such data points and actually minimizes their impact on the final location of the boundary line.
@@ -728,12 +728,12 @@ The SVM boundary can also be modified to ignore misclassified cases in the train
 
 There is therefore a trade-off in SVM between a wide margin/more mistakes and a narrow margin/fewer mistakes. Adding flexibility to the model using the _hyperparameter C_ introduces what’s called a _“soft margin,”_ which ignores a determined portion of cases that cross over the soft margin—leading to greater generalization in the model.
 
-![](img/240828171721.png)
+![](assets/img/240828171721.png)
 - Figure 44: Soft margin versus hard margin
 
 SVM’s real strength lies with high-dimensional data and handling multiple features. SVM has numerous advanced variations available to classify high-dimensional data using what’s called the Kernel Trick.
 
-![](img/240828171753.png)
+![](assets/img/240828171753.png)
 - Figure 45: In this example, the decision boundary provides a non-linear separator between the data in a 2-D space but transforms into a linear separator between data points when projected into a 3-D space with a low feature-to-row ratio (low number of features relative to rows) due to speed and performance constraints.
 
 SVM does, though, excel at untangling outliers from complex small and medium-sized datasets and managing high-dimensional data.
@@ -742,7 +742,7 @@ SVM does, though, excel at untangling outliers from complex small and medium-siz
 
 Using an SVM classifier, your task is to classify which island a penguin has come from after arriving on your own island.
 
-![](img/240828171855.png)
+![](assets/img/240828171855.png)
 
 1. Which of the following variables would be the dependent variable for this model? 
 - A. island 
@@ -770,12 +770,12 @@ Using an SVM classifier, your task is to classify which island a penguin has com
 
 The naming of this technique was inspired by the algorithm’s structural resemblance to the human brain.
 
-![](img/240828172131.png)
+![](assets/img/240828172131.png)
 - Figure 46: Anatomy of a human brain neuron
 
 Artificial neural networks consist of interconnected decision functions, known as _nodes_, which interact with each other through axon-like edges.
 
-![](img/240828172221.png)
+![](assets/img/240828172221.png)
 - Figure 47: The nodes, edges/weights, and sum/activation function of a basic neural network
 
 Each edge in the network has a numeric weight that can be altered based on experience. The sum of the connected edges satisfies a set threshold, known as the activation function, this activates a neuron at the next layer.
@@ -807,7 +807,7 @@ In both examples, obtaining a fast and accurate prediction is more important tha
 
 A typical neural network can be divided into input, hidden, and output layers.
 
-![](img/240828172422.png)
+![](assets/img/240828172422.png)
 - Figure 48: The three general layers of a neural network
 
 While there are many techniques to assemble the nodes of a neural network, the simplest method is the feed-forward network where signals flow only in one direction and there’s no loop in the network.
@@ -816,7 +816,7 @@ While there are many techniques to assemble the nodes of a neural network, the s
 
 The most basic form of a feed-forward neural network is the _#perceptron_
 
-![](img/240828172451.png)
+![](assets/img/240828172451.png)
 - Figure 50: Weights are added to the perceptron
 
 Next, we multiply each weight by its input: 
@@ -842,14 +842,14 @@ While more flexible than a perceptron, a sigmoid neuron is _unable to generate n
 
 Third option is the _#hyperbolic_tangent_function_.
 
-![](img/240828172711.png)
+![](assets/img/240828172711.png)
 - Figure 53: A hyperbolic tangent function graph
 
 ### Multilayer Perceptrons
 
 _#multilayer_perceptron_ is an algorithm for predicting a categorical (classification) or continuous (regression) target variable. Powerful because they aggregate multiple models into a _unified prediction model_
 
-![](img/240828172826.png)
+![](assets/img/240828172826.png)
 - Figure 54: A multilayer perceptron used to classify a social media user’s political preference
 
 Ideal for interpreting _large and complex datasets with no time or computational restraints_. Less compute-intensive algorithms, such as decision trees and logistic regression, for example, are more efficient for working with smaller datasets.
@@ -860,14 +860,14 @@ As patterns in the data become more complicated—especially a shallow model is 
 
 A _#neural_network_, with a deep number of layers, though, can be used to interpret a high number of input features and break down complex patterns into simpler patterns, as shown in Figure 55.
 
-![](img/240828172944.png)
+![](assets/img/240828172944.png)
 - Figure 55: Facial recognition using deep learning. Source: kdnuggets.com
 
 What makes deep learning _“deep” is the stacking of at least 5-10 node layers_.
 
 Object recognition, as used by self-driving cars to recognize objects such as pedestrians and other vehicles, uses upward of 150 layers and is a popular application of deep learning.
 
-![](img/240828173019.png)
+![](assets/img/240828173019.png)
 - Table 13: Common usage scenarios and paired deep learning techniques
 
 Multilayer perceptrons _(MLP) have largely been superseded by new deep learning techniques_ such as _#convolution_networks_, _#recurrent_networks_, _#deep_belief_networks_, and _#recursive_neural_tensor_networks_ (RNTN).
@@ -875,7 +875,7 @@ Multilayer perceptrons _(MLP) have largely been superseded by new deep learning 
 ### CHAPTER QUIZ   
 Using a multilayer perceptron, your job is to create a model to classify the gender sex) of penguins that have been affected and rescued during a natural disaster. However, you can only use the physical attributes of penguins to train your model.
 
-![](img/240828171855.png)
+![](assets/img/240828171855.png)
 
 1. How many output nodes does the multilayer perceptron need to predict the dependent variable of sex (gender)?
 
@@ -903,9 +903,9 @@ Decision trees, on the other hand, are transparent and easy to interpret. They w
 
 _#Decision_trees_ are used primarily for solving _classification problems_ but can also be _used as a regression model_ to predict numeric outcomes.
 
-![](240829094411.png)
+![](assets/img/240829094411.png)
 - Figure 56: Example of a regression tree
-o![](240829094430.png)
+o![](assets/img/240829094430.png)
 - Figure 57: Example of a classification tree
 
 Building a Decision Tree
@@ -916,14 +916,14 @@ Building a Decision Tree
 - we want the data at _each layer to be more homogenous_ than the previous partition.
 - want to pick a _greedy algorithm_ that can reduce entropy at each layer of the tree. An example of a greedy algorithm is the Iterative Dichotomizer (ID3), invented by J.R. Quinlan.
 
-![](240829094930.png)
+![](assets/img/240829094930.png)
 - Table 14: Employee characteristics
 
 
 Black = Promoted, White = Not Promoted
-- Exceeded KPI: ![](240829095000.png)
-- Leadership Capability: ![](240829095315.png)
-- Aged Under 30: ![](240829095856.png)
+- Exceeded KPI: ![](assets/img/240829095000.png)
+- Leadership Capability: ![](assets/img/240829095315.png)
+- Aged Under 30: ![](assets/img/240829095856.png)
 
 ### Calculating Entropy
 
@@ -964,7 +964,7 @@ Involves _growing multiple decision trees using a randomized selection_ of input
 
 Artificially limit the choice of variables by capping the number of variables considered for each split.
 
-![](240829102351.png)
+![](assets/img/240829102351.png)
 - Figure 58: Example of growing random trees to produce a prediction
 
 Scott Hartshorn _advises focusing on optimizing other hyperparameters before
@@ -981,7 +981,7 @@ Boosting is _combining “weak” models into one “strong”_ model. This is 
 
 One of the more popular boosting algorithms is _gradient boosting_. Rather than selecting combinations of variables at random, gradient boosting selects variables that improve prediction accuracy with each new tree.
 
-![](240829102600.png)
+![](assets/img/240829102600.png)
 - Figure 59: Example of reducing prediction error across multiple trees to produce a prediction
 
 Boosting also _mitigates the issue of overfitting_ and it does so using fewer trees than random forests.
@@ -994,7 +994,7 @@ The other main downside of boosting is the _slow processing speed_ that comes wi
 
 ### CHAPTER QUIZ   
 Your task is to predict the body mass (body_mass_g) of penguins using the penguin dataset and the random forests algorithm.
-![](img/240828171855.png)
+![](assets/img/240828171855.png)
 
 1. Which variables could we use as independent variables to train our model? 
 2. To train a quick benchmark model, gradient boosting is faster to train than random forests. 
@@ -1051,7 +1051,7 @@ Stacking runs multiple models simultaneously on the data and combines those resu
 
 Unlike boosting and bagging, stacking usually combines outputs from different algorithms (heterogenous) rather than altering the hyperparameters of the same algorithm (homogenous).
 
-![](240829151327.png)
+![](assets/img/240829151327.png)
 - Figure 60: Stacking algorithm
 
 The gains of using a stacking technique are marginal in line with the level of complexity, and organizations usually opt for the ease and efficiency of boosting or bagging.
@@ -1177,6 +1177,9 @@ Another way of optimizing algorithm hyperparameters is the randomized search met
 - more advanced tutorial available at https://scatterplotpress.com/p/house-prediction-model.
 
 ### Code for the Optimized Model
+
+[Melbourne_housing_FULL dataset](https://www.kaggle.com/anthonypino/melbourne-housing-market/)
+- [Local copy of csv](MELBOURNE_HOUSE_PRICES_LESS.csv)
 
 ```python
 import pandas as pd 
