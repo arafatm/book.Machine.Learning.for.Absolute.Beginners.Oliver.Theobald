@@ -1183,30 +1183,29 @@ Another way of optimizing algorithm hyperparameters is the randomized search met
 - [Code: ipynb](code/optimized.ipynb)
 
 ```python
+# pip install pandas scikit-learn
 import pandas as pd 
 from sklearn.model_selection import train_test_split 
 from sklearn import ensemble 
 from sklearn.metrics import mean_absolute_error 
 
-# Read in data from CSV 
-df = pd.read_csv('~/Downloads/Melbourne_housing_FULL.csv') 
+# Read in CSV 
+df = pd.read_csv('melbourne.house.prices.csv') 
+print("Found ", len(df), "rows prior to scrubbing")
+print(df.head(3))
 
-# Delete unneeded columns 
-del df['Address'];
-del df['Method'];
-del df['SellerG'];
-del df['Date'];
-del df['Postcode'];
-del df['Lattitude'];
-del df['Longtitude'];
-del df['Regionname'];
-del df['Propertycount'];
+# drop unneeded columns
+df = df.drop(['Address', 'Method', 'SellerG', 'Date', 'Postcode', 'Regionname', 'Propertycount'], axis=1)
 
 # Remove rows with missing values 
 df.dropna(axis = 0, how = 'any', subset = None, inplace = True) 
 
 # Convert non-numeric data using one-hot encoding 
 df = pd.get_dummies(df, columns = ['Suburb', 'CouncilArea', 'Type']) 
+
+# print number of rows
+print("\n-----\n\nFound ", len(df), "rows after scrubbing")
+print(df.head(3))
 
 # Assign X and y variables 
 X = df.drop('Price',axis=1) 
@@ -1237,7 +1236,6 @@ print ("Test Set Mean Absolute Error: %.2f" % mae_test)
 ### Code for Grid Search Model
 
 ```python
-
 ```
 
 ## NEXT STEPS 6 Video Tutorials
