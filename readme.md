@@ -1176,10 +1176,11 @@ Grid search does _take a long time to run_! It sometimes helps to run a relative
 Another way of optimizing algorithm hyperparameters is the randomized search method using Scikit-learn’s `RandomizedSearchCV`.
 - more advanced tutorial available at https://scatterplotpress.com/p/house-prediction-model.
 
-### Code for the Optimized Model
+## Code for the Optimized Model
 
 [Melbourne_housing_FULL dataset](https://www.kaggle.com/anthonypino/melbourne-housing-market/)
-- [Local copy of csv](MELBOURNE_HOUSE_PRICES_LESS.csv)
+- [Local copy of csv](code/MELBOURNE_HOUSE_PRICES_LESS.csv)
+- [Code: ipynb](code/optimized.ipynb)
 
 ```python
 import pandas as pd 
