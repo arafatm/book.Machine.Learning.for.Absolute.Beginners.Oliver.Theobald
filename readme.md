@@ -4,6 +4,8 @@ title: Machine Learning for Absolute Beginners
 ---
 # Machine Learning For Absolute Beginners: A Plain English Introduction
 
+[minicourse](#^minicourse)
+
 ## 2 WHAT IS MACHINE LEARNING?
 
 A key characteristic of machine learning is the concept of _self-learning_. This
@@ -893,157 +895,168 @@ Using a multilayer perceptron, your job is to create a model to classify the gen
 
 ## 14 DECISION TREES
 
-The huge amount of input data and computational resources required to train a neural network is the first downside
-
-other major downside of neural networks is the black-box dilemma, which conceals the model’s decision structure.
+Downsides of Neural Neworks:
+- Huge amount of input data and computational resources required to train 
+- _Black-box dilemma_, which conceals the model’s decision structure.
 
 Decision trees, on the other hand, are transparent and easy to interpret. They work with less data and consume less computational resources.
 
-Decision trees are used primarily for solving classification problems but can also be used as a regression model to predict numeric outcomes.
+_#Decision_trees_ are used primarily for solving _classification problems_ but can also be _used as a regression model_ to predict numeric outcomes.
 
-Figure 56: Example of a regression tree
-
-Figure 57: Example of a classification tree
+![](240829094411.png)
+- Figure 56: Example of a regression tree
+o![](240829094430.png)
+- Figure 57: Example of a classification tree
 
 Building a Decision Tree
+- start with a _root node_ that acts as a starting point 
+- followed by splits that produce branches, also known as _edges_.
+- branches link to leaves, also known as _nodes_, which form _decision points_.
+- Aim is to keep the tree as small as possible. This is achieved by selecting a variable that optimally _splits the data into homogenous groups_
+- we want the data at _each layer to be more homogenous_ than the previous partition.
+- want to pick a _greedy algorithm_ that can reduce entropy at each layer of the tree. An example of a greedy algorithm is the Iterative Dichotomizer (ID3), invented by J.R. Quinlan.
 
-Decision trees start with a root node that acts as a starting point and is followed by splits that produce branches, also known as edges.
+![](240829094930.png)
+- Table 14: Employee characteristics
 
-The branches then link to leaves, also known as nodes, which form decision points.
-
-The aim is to keep the tree as small as possible. This is achieved by selecting a variable that optimally splits the data into homogenous groups,
-
-we want the data at each layer to be more homogenous than the previous partition.
-
-We therefore want to pick a “greedy” algorithm that can reduce entropy at each layer of the tree. An example of a greedy algorithm is the Iterative Dichotomizer (ID3), invented by J.R. Quinlan.
-
-Table 14: Employee characteristics
-
-Let’s first split the data by variable 1
 
 Black = Promoted, White = Not Promoted
+- Exceeded KPI: ![](240829095000.png)
+- Leadership Capability: ![](240829095315.png)
+- Aged Under 30: ![](240829095856.png)
 
-Now let’s try variable 2
+### Calculating Entropy
 
-Black = Promoted, White = Not Promoted
+$(-p_1 logp_1 - p_2 logp_2) / log2$
 
-Lastly, we have variable 3
+- Exceeded KPI:
+	- Yes: $p_1 = [6,6]$ $p_2 = [0,6]$
+	- No: $p_1 = [0,4]$ $p_2 = [4,4]$
+	- $(-6 / 6*log6/6 - 0 / 6*log0/6) / log2 = 0$
+	- $(-0 / 4*log4/4 - 4 / 4*log0/4) / log2 = 0$
+	- entropy = $0*0$
+- Leadership Capability
+	- Yes: $p_1 = [2,4]$ $p_2 = [2,4]$
+	- No: $p_1 = [4,6]$ $p_2 = [2,6]$
+	- $(-2 / 4*log2/4 - 2 / 4*log2/4) / log2 = 1$
+	- $(-4 / 6*log4/6 - 2 / 6*log2/6) / log2 = 0.9182...$
+	- entropy = $(4/10)*0 + (6/10)*0.918 = 0.9508$
+- Aged under 30
+	- Yes: $p_1 = [3,7]$ $p_2 = [4,7]$
+	- No: $p_1 = [3,3]$ $p_2 = [0,3]$
+	- $(-3 / 7*log3/7 - 4 / 7*log4/7) / log2 = 0.985...$
+	- $(-3 / 3*log3/3 - 0 / 3*log0/3) / log2 = 0$
+	- entropy = $(7/10)*0.985 + (3/10)*0 = 0.6895$
 
-Black = Promoted, White = Not Promoted
+Exceeded KPI generates the "perfect classification (0)", followed by Age.
 
-Calculating Entropy
-
-(-p1logp1 - p2logp2) / log2
-
-Overfitting
+### Overfitting
 
 The variable used to first split the data does not guarantee the most accurate model at the end of production.
 
-Thus, although decision trees are highly visual and effective at classifying a single set of data, they are also inflexible and vulnerable to overfitting, especially for datasets with high pattern variance.
+Thus, although decision trees are highly visual and effective at classifying a single set of data, they are also _inflexible and vulnerable to overfitting, especially for datasets with high pattern variance_.
 
-Bagging
+### Bagging
 
-involves growing multiple decision trees using a randomized selection of input data for each tree and combining the results by averaging the output (for regression) or voting (for classification).
+Involves _growing multiple decision trees using a randomized selection_ of input data for each tree and combining the results by averaging the output (for regression) or voting (for classification).
 
-Random Forests
+### Random Forests
 
-artificially limit the choice of variables by capping the number of variables considered for each split.
+Artificially limit the choice of variables by capping the number of variables considered for each split.
 
-Figure 58: Example of growing random trees to produce a prediction
+![](240829102351.png)
+- Figure 58: Example of growing random trees to produce a prediction
 
-Scott Hartshorn advises focusing on optimizing other hyperparameters before adding more trees to the initial model, as this will reduce processing time in the short term and increasing the number of trees later should
+Scott Hartshorn _advises focusing on optimizing other hyperparameters before
+adding more trees_ to the initial model, as this will reduce processing time in
+the short term and increasing the number of trees later should
 
-other techniques including gradient boosting tend to return superior prediction accuracy.
+Other techniques including _gradient boosting_ tend to return superior prediction accuracy.
 
 Random forests, though, are fast to train and work well for obtaining a quick benchmark model.
 
-Boosting
+### (Gradient) Boosting
 
-combining “weak” models into one “strong” model.
+Boosting is _combining “weak” models into one “strong”_ model. This is achieved by _adding weights_ to trees based on misclassified cases in the previous tree.
 
-achieved by adding weights to trees based on misclassified cases in the previous tree.
+One of the more popular boosting algorithms is _gradient boosting_. Rather than selecting combinations of variables at random, gradient boosting selects variables that improve prediction accuracy with each new tree.
 
-One of the more popular boosting algorithms is gradient boosting.
+![](240829102600.png)
+- Figure 59: Example of reducing prediction error across multiple trees to produce a prediction
 
-Rather than selecting combinations of variables at random, gradient boosting selects variables that improve prediction accuracy with each new tree.
+Boosting also _mitigates the issue of overfitting_ and it does so using fewer trees than random forests.
 
-Figure 59: Example of reducing prediction error across multiple trees to produce a prediction
+While adding more trees to a random forest usually helps to offset overfitting, the same process can cause overfitting in the case of boosting.
 
-Boosting also mitigates the issue of overfitting and it does so using fewer trees than random forests.
+Overfitting can be explained by their highly-tuned focus on learning and reiterating from earlier mistakes. It can lead to mixed results in the case of data stretched by a high number of outliers.
 
-While adding more trees to a random forest usually helps to offset overfitting, the same process can cause overfitting in the case of boosting
+The other main downside of boosting is the _slow processing speed_ that comes with training a sequential decision model.
 
-overfitting can be explained by their highly-tuned focus on learning and reiterating from earlier mistakes.
+### CHAPTER QUIZ   
+Your task is to predict the body mass (body_mass_g) of penguins using the penguin dataset and the random forests algorithm.
+![](img/240828171855.png)
 
-it can lead to mixed results in the case of data stretched by a high number of outliers.
+1. Which variables could we use as independent variables to train our model? 
+2. To train a quick benchmark model, gradient boosting is faster to train than random forests. 
+	- True or False?
+3. Which tree-based technique can be easily visualized? 
+	- A. Decision trees 
+	- B. Gradient boosting 
+	- C. Random forests
 
-The other main downside of boosting is the slow processing speed that comes with training a sequential decision model.
-
-CHAPTER QUIZ   Your task is to predict the body mass (body_mass_g) of penguins using the penguin dataset and the random forests algorithm.
-
-1) Which variables could we use as independent variables to train our model?
-
-2) To train a quick benchmark model, gradient boosting is faster to train than random forests. True or False?
-
-3) Which tree-based technique can be easily visualized? A. Decision trees B. Gradient boosting C. Random forests
-
-ANSWERS
-
-1)    All variables except for body_mass_g (Tree-based techniques work well with both discrete and continuous variables as input variables.)
-
-2)    False (Gradient boosting runs sequentially, making it slower to train. A random forest is trained simultaneously, making it faster to train.)
-
-3)    A, Decision trees
+<details><summary>Ans</summary>
+<li>All variables except for body_mass_g (Tree-based techniques work well with both discrete and continuous variables as input variables.)
+<li>False (Gradient boosting runs sequentially, making it slower to train. A random forest is trained simultaneously, making it faster to train.)
+<li>A, Decision trees
+</details>
 
 ## 15 ENSEMBLE MODELING
 
-By combining the output of different models (instead of relying on a single estimate), ensemble modeling helps to build a consensus on the meaning of the data.
+By _combining the output of different models_ (instead of relying on a single estimate), ensemble modeling helps to _build a consensus_ on the meaning of the data.
 
-In the case of classification, multiple models are consolidated into a single prediction using a voting system[25]
+In the case of classification, multiple models are consolidated into a single prediction using a _voting system_. It can also be divided into sequential or parallel and homogenous or heterogeneous.
 
-can also be divided into sequential or parallel and homogenous or heterogeneous.
+### Sequential and Parallel Models
 
-sequential and parallel models.
+For _#sequential_models_, the prediction error is reduced by _adding weights to classifiers that previously misclassified_ data.
+- _Gradient boosting_ and _AdaBoost_ (designed for classification problems) are both examples of sequential models.
 
-In the case of the former, the model’s prediction error is reduced by adding weights to classifiers that previously misclassified data.
+_#Parallel_ensemble_models_ work concurrently and reduce error by averaging.
+- _Random forests_ are an example of this technique.
+- Ensemble models can be generated using a single technique with numerous variations, known as a _homogeneous ensemble_, or through different techniques, known as a _heterogeneous ensemble_.
+- An example of a _homogeneous_ ensemble model would be _multiple decision trees_ working together to form a single prediction (i.e. bagging).
+- An example of a _heterogeneous_ ensemble would be the usage of _k-means clustering_ or a _neural network_ in collaboration with a decision tree algorithm.
 
-Gradient boosting and AdaBoost (designed for classification problems) are both examples of sequential models.
+It’s important to select techniques that complement each other.
+- Neural networks, for instance, require complete data for analysis, whereas decision trees are competent at handling missing values.[28]
+- Together, these two techniques provide added benefit over a homogeneous model.
 
-parallel ensemble models work concurrently and reduce error by averaging.
+There are four main methods: bagging, boosting, a bucket of models, and stacking.
 
-Random forests are an example of this technique.
+### Bucket of Models
 
-Ensemble models can be generated using a single technique with numerous variations, known as a homogeneous ensemble, or through different techniques, known as a heterogeneous ensemble.
+Bucket of models trains multiple different algorithmic models using the same training data and then picks the one that performed most accurately on the test data.
 
-An example of a homogeneous ensemble model would be multiple decision trees working together to form a single prediction (i.e. bagging).
-
-an example of a heterogeneous ensemble would be the usage of k-means clustering or a neural network in collaboration with a decision tree algorithm.
-
-it’s important to select techniques that complement each other.
-
-Neural networks, for instance, require complete data for analysis, whereas decision trees are competent at handling missing values.[28]
-
-Together, these two techniques provide added benefit over a homogeneous model.
-
-there are four main methods: bagging, boosting, a bucket of models, and stacking.
-
-bucket of models trains multiple different algorithmic models using the same training data and then picks the one that performed most accurately on the test data.
+### Bagging
 
 Bagging, as we know, is an example of parallel model averaging using a homogenous ensemble, which draws upon randomly drawn data and combines predictions to design a unified model.
 
+### Boosting
+
 Boosting is a popular alternative technique that is still a homogenous ensemble but addresses errors and data misclassified by the previous iteration to produce a sequential model.
+
+### Stacking
 
 Stacking runs multiple models simultaneously on the data and combines those results to produce a final model.
 
 Unlike boosting and bagging, stacking usually combines outputs from different algorithms (heterogenous) rather than altering the hyperparameters of the same algorithm (homogenous).
 
-Figure 60: Stacking algorithm
+![](240829151327.png)
+- Figure 60: Stacking algorithm
 
-the gains of using a stacking technique are marginal in line with the level of complexity, and organizations usually opt for the ease and efficiency of boosting or bagging.
+The gains of using a stacking technique are marginal in line with the level of complexity, and organizations usually opt for the ease and efficiency of boosting or bagging.
 
-The Netflix Prize competition, held between 2006 and 2009, offered a prize for a machine learning model that could significantly improve Netflix’s content recommender system.
-
-One of the winning techniques, from the team BellKor’s Pragmatic Chaos, adopted a form of linear stacking that blended predictions from hundreds of different models using different algorithms.
+The _#Netflix_Prize_competition_, held between 2006 and 2009, offered a prize for a machine learning model that could significantly improve Netflix’s content recommender system. One of the winning techniques, from the team BellKor’s Pragmatic Chaos, adopted a form of linear stacking that blended predictions from hundreds of different models using different algorithms.
 
 ## 16 DEVELOPMENT ENVIRONMENT
 
@@ -1053,109 +1066,174 @@ One of the winning techniques, from the team BellKor’s Pragmatic Chaos, adopte
 
 The Melbourne_housing_FULL dataset can be downloaded from this link: https://www.kaggle.com/anthonypino/melbourne-housing-market/.
 
-df = pd.read_csv('~/Downloads/Melbourne_housing_FULL.csv')
-
-df.head()
-
-Figure 68: Finding a row using .iloc[ ]
-
-df.columns   Figure 69: Print columns
+```python
+import pandas as pd
+df = pd.read_csv('~/Downloads/Melbourne_housing_FULL.csv')  # load into dataframe
+df.head()     # preview the dataframe
+df.iloc[100]  # row 101
+df.columns    # headers
+```
 
 ## 17 BUILDING A MODEL IN PYTHON
 
-#Import libraries import pandas as pd from sklearn.model_selection import train_test_split from sklearn import ensemble from sklearn.metrics import mean_absolute_error
+```python
+import pandas as pd 
+from sklearn.model_selection  import train_test_split 
+from sklearn                  import ensemble 
+from sklearn.metrics          import mean_absolute_error
 
-df = pd.read_csv('~/Downloads/Melbourne_housing_FULL.csv')
+df = pd.read_csv('~/Downloads/Melbourne_housing_FULL.csv')  # load data into dataframe
 
-The misspellings of “longitude” and “latitude” are preserved here del df['Address'] del df['Method'] del df['SellerG'] del df['Date'] del df['Postcode'] del df['Lattitude'] del df['Longtitude'] del df['Regionname'] del df['Propertycount']
+# Data Scrubbbing: remove unnecessary data
+# The misspellings of “longitude” and “latitude” are preserved here 
+# The remaining eleven independent variables from the dataset are Suburb, Rooms,
+# Type, Distance, Bedroom2, Bathroom, Car, Landsize, BuildingArea, YearBuilt, and
+# CouncilArea.
+del df['Address']; del df['Method']; del df['SellerG']; del df['Date']; del df['Postcode']; del df['Lattitude']; del df['Longtitude']; del df['Regionname']; del df['Propertycount'];
+# The twelfth variable is the dependent variable which is Price.
 
-The remaining eleven independent variables from the dataset are Suburb, Rooms, Type, Distance, Bedroom2, Bathroom, Car, Landsize, BuildingArea, YearBuilt, and CouncilArea.
+# remove rows with missing values
+df.dropna(axis = 0, how = 'any', subset = None, inplace = True)   
 
-The twelfth variable is the dependent variable which is Price.
-
-df.dropna(axis = 0, how = 'any', subset = None, inplace = True)   Table 16: Dropna parameters
-
+# one-hot encoFing
 df = pd.get_dummies(df, columns = ['Suburb', 'CouncilArea', 'Type'])
 
-X = df.drop('Price',axis=1) y = df['Price']
-
+# Assign 'Price' as (dependent) Y, others are independent X  
+y = df['Price']
+X = df.drop('Price',axis=1) 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, shuffle = True)
 
-assign our chosen algorithm (gradient boosting regressor) as a new variable (model) and configure its hyperparameters
+# Assign our chosen algorithm (gradient boosting regressor) 
+# as a new variable (model) 
+# and configure its hyperparameters
+model = ensemble.GradientBoostingRegressor(n_estimators = 150,  # No. decision trees
+										   learning_rate = 0.1, # influence of new trees    
+										   max_depth = 30,      # max layers
+										   min_samples_split = 4, # min samples to split
+										   min_samples_leaf = 6, # min samples per leaf
+										   max_features = 0.6,   # number features to split
+										   loss = 'huber' )     # 
 
-model = ensemble.GradientBoostingRegressor(     n_estimators = 150,     learning_rate = 0.1,     max_depth = 30,     min_samples_split = 4,     min_samples_leaf = 6,     max_features = 0.6,     loss = 'huber' )
+# The first line is the algorithm itself (gradient boosting)
+# n_estimators states the number of decision trees.
+#     a high number of trees generally improves accuracy (up to a certain point) 
+#     but will inevitably extend the model’s processing time.
+# learning_rate controls the rate at which additional decision trees influence the overall prediction.
+#     Inserting a low rate here, such as 0.1, should help to improve accuracy.
+# max_depth defines the maximum number of layers (depth) for each decision tree.
+#     If “None” is selected, then nodes expand until all leaves are pure 
+#     or until all leaves contain less than min_samples_leaf.
+# min_samples_split defines the minimum samples required to execute a new binary split.
+# min_samples_leaf represents the minimum samples that must appear in each child node (leaf) before a new branch can be implemented.
+# max_features is the total number of features presented to the model when determining the best split.
+# loss calculates the model's error rate.
+# we are using huber which protects against outliers and anomalies.
+# Alternative error rate options include ls (least squares regression), lad (least absolute deviations), and quantile (quantile regression).
 
-The first line is the algorithm itself (gradient boosting)
-
-n_estimators states the number of decision trees.
-
-a high number of trees generally improves accuracy (up to a certain point) but will inevitably extend the model’s processing time.
-
-learning_rate controls the rate at which additional decision trees influence the overall prediction.
-
-Inserting a low rate here, such as 0.1, should help to improve accuracy.
-
-max_depth defines the maximum number of layers (depth) for each decision tree.
-
-If “None” is selected, then nodes expand until all leaves are pure or until all leaves contain less than min_samples_leaf.
-
-min_samples_split defines the minimum number of samples required to execute a new binary split.
-
-min_samples_leaf represents the minimum number of samples that must appear in each child node (leaf) before a new branch can be implemented.
-
-max_features is the total number of features presented to the model when determining the best split.
-
-loss calculates the model's error rate.
-
-we are using huber which protects against outliers and anomalies.
-
-Alternative error rate options include ls (least squares regression), lad (least absolute deviations), and quantile (quantile regression).
-
-fit() function from Scikit-learn to link the training data to the learning algorithm stored in the variable model to train the prediction model.
-
+# fit() function from Scikit-learn to link the training data to the learning algorithm stored in the variable model to train the prediction model.
 model.fit(X_train, y_train)
 
-predict() function from Scikit-learn to run the model on the X_train data and evaluate its performance against the actual y_train data.
+# predict() function from Scikit-learn to run the model on the X_train data and evaluate its performance against the actual y_train data.
+mae_train = mean_absolute_error(y_train, model.predict(X_train)) 
+print ("Training Set Mean Absolute Error: %.2f" % mae_train)
 
-mae_train = mean_absolute_error(y_train, model.predict(X_train)) print ("Training Set Mean Absolute Error: %.2f" % mae_train)
+mae_test = mean_absolute_error(y_test, model.predict(X_test)) 
+print ("Test Set Mean Absolute Error: %.2f" % mae_test)
+# output:
+# Training Set Mean Absolute Error: 27256.70  
+# Test Set Mean Absolute Error: 166103.04
+```
 
-mae_test = mean_absolute_error(y_test, model.predict(X_test)) print ("Test Set Mean Absolute Error: %.2f" % mae_test)
+For this model, our _training set’s mean absolute error_ is $27,256.70, and the _test set’s mean absolute error_ is $166,103.04.
+- While $27,256.70 may seem like a lot of money, this average error value is low given the maximum range of our dataset is $8 million.
+- A high discrepancy between the training and test data is usually an indicator of overfitting in the model.
 
-For this model, our training set’s mean absolute error is $27,256.70, and the test set’s mean absolute error is $166,103.04.
-
-While $27,256.70 may seem like a lot of money, this average error value is low given the maximum range of our dataset is $8 million.
-
-A high discrepancy between the training and test data is usually an indicator of overfitting in the model.
-
-mini course at https://scatterplotpress.com/p/house-prediction-model.
+mini course at https://scatterplotpress.com/p/house-prediction-model ^minicourse
 
 ## 18 MODEL OPTIMIZATION
 
-want to improve its prediction accuracy with future data and reduce the effects of overfitting.
+We want to improve its prediction accuracy with future data and reduce the effects of overfitting.
 
-starting point is to modify the model’s hyperparameters.
+### Modify Hyperparameters
 
-Holding the other hyperparameters constant, let’s begin by adjusting the maximum depth from “30” to “5.”
+Starting point is to modify the model’s hyperparameters.
+- Holding the other hyperparameters constant, let’s begin by adjusting the maximum depth from “30” to “5.”
+- Although the mean absolute error of the training set is now higher, this helps to reduce the issue of overfitting and should improve the model’s performance.
 
-Although the mean absolute error of the training set is now higher, this helps to reduce the issue of overfitting and should improve the model’s performance.
+### More Trees
 
-Another step to optimize the model is to add more trees. If we set n_estimators to 250,
-
-This second optimization reduces the training set’s absolute error rate by approximately $10,000
+Another step to optimize the model is to add more trees. If we set `n_estimators` = $250$. This second optimization reduces the training set’s absolute error rate by approximately $10,000
 
 While manual trial and error can be a useful technique to understand the impact of variable selection and hyperparameters, there are also automated techniques for model optimization, such as grid search.
 
+### Grid Search
+
 Grid search allows you to list a range of configurations you wish to test for each hyperparameter and methodically test each
 
-grid search does take a long time to run![33] It sometimes helps to run a relatively coarse grid search using consecutive powers of 10 (i.e. 0.01, 0.1, 1, 10) and then run a finer grid search around the best value identified.[34]
+Grid search does _take a long time to run_! It sometimes helps to run a relatively coarse grid search using consecutive powers of 10 (i.e. 0.01, 0.1, 1, 10) and then run a finer grid search around the best value identified.
 
-Another way of optimizing algorithm hyperparameters is the randomized search method using Scikit-learn’s RandomizedSearchCV.
+### Randomized Search Method
+Another way of optimizing algorithm hyperparameters is the randomized search method using Scikit-learn’s `RandomizedSearchCV`.
+- more advanced tutorial available at https://scatterplotpress.com/p/house-prediction-model.
 
-more advanced tutorial available at https://scatterplotpress.com/p/house-prediction-model.
+### Code for the Optimized Model
 
-Code for the Optimized Model
+```python
+import pandas as pd 
+from sklearn.model_selection import train_test_split 
+from sklearn import ensemble 
+from sklearn.metrics import mean_absolute_error 
 
-Code for Grid Search Model
+# Read in data from CSV 
+df = pd.read_csv('~/Downloads/Melbourne_housing_FULL.csv') 
+
+# Delete unneeded columns 
+del df['Address'];
+del df['Method'];
+del df['SellerG'];
+del df['Date'];
+del df['Postcode'];
+del df['Lattitude'];
+del df['Longtitude'];
+del df['Regionname'];
+del df['Propertycount'];
+
+# Remove rows with missing values 
+df.dropna(axis = 0, how = 'any', subset = None, inplace = True) 
+
+# Convert non-numeric data using one-hot encoding 
+df = pd.get_dummies(df, columns = ['Suburb', 'CouncilArea', 'Type']) 
+
+# Assign X and y variables 
+X = df.drop('Price',axis=1) 
+y = df['Price'] 
+
+# Split data into test/train set (70/30 split) and shuffle 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, shuffle = True) 
+
+# Set up algorithm 
+model = ensemble.GradientBoostingRegressor(n_estimators = 250,
+										   learning_rate = 0.1,
+										   max_depth = 5,
+										   min_samples_split = 10,
+										   min_samples_leaf = 6,
+										   max_features = 0.6,
+										   loss = 'huber' ) 
+
+# Run model on training data  
+model.fit(X_train, y_train)
+
+# Check model accuracy (up to two decimal places) 
+mae_train = mean_absolute_error(y_train, model.predict(X_train)) 
+print ("Training Set Mean Absolute Error: %.2f" % mae_train) 
+mae_test = mean_absolute_error(y_test, model.predict(X_test)) 
+print ("Test Set Mean Absolute Error: %.2f" % mae_test)
+```
+
+### Code for Grid Search Model
+
+```python
+```
 
 ## NEXT STEPS 6 Video Tutorials
 
@@ -1165,7 +1243,7 @@ Building a House Prediction Model in Python
 
 this free chapter in video format at https://scatterplotpress.com/p/house-prediction-model.
 
-FURTHER RESOURCES
+## FURTHER RESOURCES
 
 Machine Learning Format: Free Coursera course Presenter: Andrew Ng
 
@@ -1177,19 +1255,19 @@ Machine Learning With Random Forests And Decision Trees: A Visual Guide For Begi
 
 Linear Regression And Correlation: A Beginner's Guide Format: E-book Author: Scott Hartshorn
 
-The Future of AI
+## The Future of AI
 
 The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future Format: E-Book, Book, Audiobook Author: Kevin Kelly
 
 Homo Deus: A Brief History of Tomorrow Format: E-Book, Book, Audiobook Author: Yuval Noah Harari
 
-Programming
+## Programming
 
 Learning Python, 5th Edition Format: E-Book, Book Author: Mark Lutz
 
 Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems Format: E-Book, Book Author: Aurélien Géron
 
-Recommender Systems
+## Recommender Systems
 
 The Netflix Prize and Production Machine Learning Systems: An Insider Look Format: Blog Author: Mathworks
 
@@ -1201,13 +1279,13 @@ Deep Learning Specialization: Master Deep Learning, and Break into AI Format: Co
 
 Deep Learning Nanodegree Format: Udacity course Presenter: Udacity
 
-Future Careers
+## Future Careers
 
 Will a Robot Take My Job? Format: Online article Author: The BBC
 
 So You Wanna Be a Data Scientist? A Guide to 2015's Hottest Profession Format: Blog Author: Todd Wasserman
 
-OTHER BOOKS BY THE AUTHOR
+## OTHER BOOKS BY THE AUTHOR
 
 AI for Absolute Beginners
 
