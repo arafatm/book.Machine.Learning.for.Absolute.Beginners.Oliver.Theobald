@@ -1236,73 +1236,104 @@ print ("Test Set Mean Absolute Error: %.2f" % mae_test)
 ### Code for Grid Search Model
 
 ```python
-# Import libraries, including GridSearchCV import pandas as pd from sklearn.model_selection import train_test_split from sklearn import ensemble from sklearn.metrics import mean_absolute_error from sklearn.model_selection import GridSearchCV # Read in data from CSV df = pd.read_csv('~/Downloads/Melbourne_housing_FULL.csv') # Delete unneeded columns del df['Address'] del df['Method'] del df['SellerG'] del df['Date'] del df['Postcode'] del df['Lattitude'] del df['Longtitude'] del df['Regionname']  del df['Propertycount'] # Remove rows with missing values df.dropna(axis = 0, how = 'any', subset = None, inplace = True) # Convert non-numeric data using one-hot encoding df = pd.get_dummies(df, columns = ['Suburb', 'CouncilArea', 'Type']) # Assign X and y variables X = df.drop('Price',axis=1) y = df['Price'] # Split data into test/train set (70/30 split) and shuffle X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, shuffle = True) # Input algorithm  model = ensemble.GradientBoostingRegressor()  # Set the configurations that you wish to test. To minimize processing time, limit num. of variables or experiment on each hyperparameter separately.  hyperparameters = {      'n_estimators': [200, 300],      'max_depth': [6, 8],
+# Import libraries, including GridSearchCV 
+import pandas as pd 
+from sklearn.model_selection import train_test_split 
+from sklearn import ensemble 
+from sklearn.metrics import mean_absolute_error 
+from sklearn.model_selection import GridSearchCV
 
+# Read in data from CSV 
+df = pd.read_csv('~/Downloads/Melbourne_housing_FULL.csv')
 
+# Delete unneeded columns 
+# **TODO**: This doesn't work
+del df['Address']; del df['Method']; del df['SellerG']; del df['Date']; del df['Postcode']; del df['Lattitude']; del df['Longtitude']; del df['Regionname'] ; del df['Propertycount']
+
+# Remove rows with missing values 
+df.dropna(axis = 0, how = 'any', subset = None, inplace = True)
+
+# Convert non-numeric data using one-hot encoding 
+df = pd.get_dummies(df, columns = ['Suburb', 'CouncilArea', 'Type'])
+
+# Assign X and y variables 
+X = df.drop('Price',axis=1) 
+y = df['Price']
+
+# Split data into test/train set (70/30 split) and shuffle 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, shuffle = True)
+
+# Input algorithm  
+model = ensemble.GradientBoostingRegressor() 
+
+# Set the configurations that you wish to test. To minimize processing time, limit num. of variables or experiment on each hyperparameter separately.  
+hyperparameters = { 'n_estimators': [200, 300], 
+				   'max_depth': [6, 8],
+				   'min_samples_split': [8, 10],      
+				   'min_samples_leaf': [5, 6],      
+				   'learning_rate': [0.01, 0.02],     
+				   'max_features': [0.8, 0.9],      
+				   'loss': ['ls', 'lad',  'huber']
+				  }  
+				   
+# Define grid search. Run with four CPUs in parallel if applicable.  
+grid = GridSearchCV(model, hyperparameters, n_jobs = 4)  
+
+# Run grid search on training data  
+grid.fit(X_train, y_train)  
+
+# Return optimal hyperparameters  
+grid.best_params_  
+
+# Check model accuracy using optimal hyperparameters 
+mae_train = mean_absolute_error(y_train, grid.predict(X_train))  
+print ("Training Set Mean Absolute Error: %.2f" % mae_train)  
+mae_test = mean_absolute_error(y_test, grid.predict(X_test))  
+print ("Test Set Mean Absolute Error: %.2f" % mae_test)
 ```
 
 ## NEXT STEPS 6 Video Tutorials
 
-six free video tutorials at https://scatterplotpress.com/p/ml-code-exercises.
-
-Building a House Prediction Model in Python
-
-this free chapter in video format at https://scatterplotpress.com/p/house-prediction-model.
+- Six free video tutorials at https://scatterplotpress.com/p/ml-code-exercises.
+- [Building a House Prediction Model in Python](https://scatterplotpress.com/p/house-prediction-model)
 
 ## FURTHER RESOURCES
 
-Machine Learning Format: Free Coursera course Presenter: Andrew Ng
-
-Project 3: Reinforcement Learning Format: Online blog tutorial Author: EECS Berkeley
-
-Basic Algorithms
-
-Machine Learning With Random Forests And Decision Trees: A Visual Guide For Beginners  Format: E-book Author: Scott Hartshorn
-
-Linear Regression And Correlation: A Beginner's Guide Format: E-book Author: Scott Hartshorn
+- Machine Learning Format: Free Coursera course Presenter: Andrew Ng
+- Project 3: Reinforcement Learning Format: Online blog tutorial Author: EECS Berkeley
+- Basic Algorithms
+- Machine Learning With Random Forests And Decision Trees: A Visual Guide For Beginners  Format: E-book Author: Scott Hartshorn
+- Linear Regression And Correlation: A Beginner's Guide Format: E-book Author: Scott Hartshorn
 
 ## The Future of AI
 
-The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future Format: E-Book, Book, Audiobook Author: Kevin Kelly
-
-Homo Deus: A Brief History of Tomorrow Format: E-Book, Book, Audiobook Author: Yuval Noah Harari
+- The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future Format: E-Book, Book, Audiobook Author: Kevin Kelly
+- Homo Deus: A Brief History of Tomorrow Format: E-Book, Book, Audiobook Author: Yuval Noah Harari
 
 ## Programming
 
-Learning Python, 5th Edition Format: E-Book, Book Author: Mark Lutz
-
-Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems Format: E-Book, Book Author: Aurélien Géron
+- Learning Python, 5th Edition Format: E-Book, Book Author: Mark Lutz
+- Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems Format: E-Book, Book Author: Aurélien Géron
 
 ## Recommender Systems
 
-The Netflix Prize and Production Machine Learning Systems: An Insider Look Format: Blog Author: Mathworks
-
-Recommender Systems Format: Coursera course Presenter: The University of Minnesota
-
-Deep Learning Simplified Format: Blog Channel: DeepLearning.TV
-
-Deep Learning Specialization: Master Deep Learning, and Break into AI Format: Coursera course Presenter: deeplearning.ai and NVIDIA
-
-Deep Learning Nanodegree Format: Udacity course Presenter: Udacity
+- The Netflix Prize and Production Machine Learning Systems: An Insider Look Format: Blog Author: Mathworks
+- Recommender Systems Format: Coursera course Presenter: The University of Minnesota
+- Deep Learning Simplified Format: Blog Channel: DeepLearning.TV
+- Deep Learning Specialization: Master Deep Learning, and Break into AI Format: Coursera course Presenter: deeplearning.ai and NVIDIA
+- Deep Learning Nanodegree Format: Udacity course Presenter: Udacity
 
 ## Future Careers
 
-Will a Robot Take My Job? Format: Online article Author: The BBC
-
-So You Wanna Be a Data Scientist? A Guide to 2015's Hottest Profession Format: Blog Author: Todd Wasserman
+- Will a Robot Take My Job? Format: Online article Author: The BBC
+- So You Wanna Be a Data Scientist? A Guide to 2015's Hottest Profession Format: Blog Author: Todd Wasserman
 
 ## OTHER BOOKS BY THE AUTHOR
 
-AI for Absolute Beginners
-
-Machine Learning with Python for Beginners
-
-Machine Learning: Make Your Own Recommender System
-
-Data Analytics for Absolute Beginners
-
-Statistics for Absolute Beginners
-
-Generative AI Art for Beginners
-
-ChatGPT Prompts Book
+- AI for Absolute Beginners
+- Machine Learning with Python for Beginners
+- Machine Learning: Make Your Own Recommender System
+- Data Analytics for Absolute Beginners
+- Statistics for Absolute Beginners
+- Generative AI Art for Beginners
+- ChatGPT Prompts Book
